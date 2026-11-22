@@ -1,0 +1,2016 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>가챠 사주운세 · 오늘의 가챠 사주 (S · A~F 등급)</title>
+  <meta name="description" content="출생 연도·월·일·시·분, 출생 지역, 24절기, 12운성, 지장간, 합충형파해, 용신·격국·조후를 반영해 모바일과 PC에서 모두 쾌적하게 즐기는 오늘의 가챠 사주운세입니다." />
+  <meta name="theme-color" content="#0B0D14" />
+  <meta property="og:title" content="가챠 사주운세 · 오늘의 가챠 사주 (S · A~F 등급)" />
+  <meta property="og:description" content="출생 연도·월·일·시·분, 출생 지역, 24절기, 12운성, 지장간, 합충형파해, 용신·격국·조후를 반영해 보는 오늘의 가챠 비틱 지수와 황금 시간대" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:site_name" content="가챠 사주운세" />
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="가챠 사주운세, 오늘의 가챠 사주, 가챠 운세, 뽑기 운세, 황금 시간대, 주간 황금일, 비틱 등급" />
+  <!-- TODO: 배포 후 실제 도메인 URL로 교체하세요 (예: https://example.com/) -->
+  <!-- <link rel="canonical" href="https://example.com/" /> -->
+  <!-- <meta property="og:url" content="https://example.com/" /> -->
+  <!-- TODO: 구글 서치 콘솔 / 네이버 서치어드바이저 소유권 인증 메타태그를 아래에 넣으세요 -->
+  <!-- <meta name="google-site-verification" content="여기에_구글_인증코드_입력" /> -->
+  <!-- <meta name="naver-site-verification" content="여기에_네이버_인증코드_입력" /> -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "가챠 사주운세",
+    "applicationCategory": "EntertainmentApplication",
+    "operatingSystem": "Web",
+    "inLanguage": "ko-KR",
+    "description": "출생 연도·월·일·시·분, 출생 지역, 24절기, 12운성, 지장간, 합충형파해, 용신·격국·조후를 반영해 보는 오늘의 가챠 비틱 지수와 황금 시간대",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "KRW"
+    }
+  }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Noto Sans KR"', 'Inter', 'sans-serif'],
+          },
+          colors: {
+            obsidian: '#0B0D14',
+            cardbg: '#131722',
+            cardborder: '#23293A',
+            gold: '#F59E0B',
+            mystic: '#8B5CF6',
+          },
+        }
+      }
+    };
+  </script>
+  <style>
+    html, body {
+      max-width: 100%;
+      overflow-x: hidden;
+      -webkit-text-size-adjust: 100%;
+    }
+    body {
+      background-color: #0B0D14;
+      color: #F3F4F6;
+      background-image:
+        radial-gradient(circle at 15% 10%, rgba(139, 92, 246, 0.14), transparent 35%),
+        radial-gradient(circle at 85% 20%, rgba(245, 158, 11, 0.10), transparent 35%);
+      padding-bottom: max(1rem, env(safe-area-inset-bottom));
+    }
+    select, button, label {
+      touch-action: manipulation;
+    }
+    .ssr-glow {
+      box-shadow: 0 0 28px rgba(245, 158, 11, 0.25), inset 0 0 12px rgba(245, 158, 11, 0.12);
+    }
+    .mystic-glow {
+      box-shadow: 0 0 24px rgba(139, 92, 246, 0.22);
+    }
+    .ad-slot {
+      background: linear-gradient(90deg, rgba(19, 23, 34, 0.85), rgba(25, 29, 44, 0.85));
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-between px-3 sm:px-6 py-4 sm:py-6 selection:bg-amber-500/30 selection:text-amber-200">
+
+  <div id="toast" class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 pointer-events-none opacity-0 transition-all duration-300 translate-y-3 w-[92%] max-w-sm">
+    <div class="bg-gray-900/95 border border-amber-500/50 text-amber-200 px-4 py-3 rounded-2xl shadow-2xl text-xs sm:text-sm font-semibold flex items-center justify-center gap-2 backdrop-blur-md text-center">
+      <span>✨</span>
+      <span id="toast-msg">클립보드에 복사되었습니다!</span>
+    </div>
+  </div>
+
+  <div class="w-full max-w-lg mx-auto space-y-4 sm:space-y-5">
+
+    <header class="text-center space-y-1.5 sm:space-y-2 pt-1">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-300 text-[11px] sm:text-xs font-semibold tracking-wide">
+        <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+      </div>
+      <h1 class="text-2xl sm:text-3xl font-black tracking-tight bg-gradient-to-r from-amber-300 via-yellow-200 to-purple-300 bg-clip-text text-transparent">
+        가챠 사주운세
+      </h1>
+      <p class="text-xs sm:text-sm text-gray-400 px-1">
+        태어난 날과 시간, 지역을 바탕으로 오늘의 가챠 운세와 뽑기 타이밍을 알려주는 점괘소입니다.
+      </p>
+    </header>
+
+    <div id="ad-slot-top" class="w-full min-h-[56px] sm:min-h-[64px] rounded-xl border border-gray-800/90 ad-slot px-3 py-1.5 flex items-center justify-between gap-2 text-[11px] text-gray-500">
+      <div class="flex items-center gap-2 min-w-0">
+        <span class="px-1.5 py-0.5 rounded bg-gray-800/90 text-[10px] font-semibold text-gray-400 shrink-0">AD</span>
+        <span class="truncate">상단 배너 영역 · #ad-slot-top</span>
+      </div>
+      <span class="text-[10px] text-gray-600 shrink-0">320×50</span>
+    </div>
+
+    <section id="input-section" class="bg-cardbg/95 border border-cardborder rounded-3xl p-4 sm:p-6 shadow-2xl backdrop-blur-md space-y-4 sm:space-y-5">
+      <div class="flex items-center justify-between gap-2 border-b border-gray-800 pb-3">
+        <h2 class="text-sm sm:text-base font-bold text-white flex items-center gap-2">
+          <span class="text-amber-400">◈</span> 플레이어 명식 입력
+        </h2>
+
+      </div>
+
+      <form id="saju-form" class="space-y-4">
+        <div>
+          <label for="target-date" class="block text-xs font-semibold text-gray-300 mb-1.5">점칠 날짜 (가챠 돌릴 날 · 향후 14일)</label>
+          <select id="target-date" class="w-full bg-obsidian border border-gray-700 focus:border-amber-500 rounded-2xl px-3.5 py-3 text-xs sm:text-sm text-white outline-none transition"></select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-gray-300 mb-1.5">생년월일 (양력 기준 · KST 24절기 정밀 대조)</label>
+          <div class="grid grid-cols-3 gap-2">
+            <select id="birth-year" aria-label="출생 연도" class="bg-obsidian border border-gray-700 focus:border-purple-500 rounded-2xl px-2.5 sm:px-3 py-3 text-xs sm:text-sm text-white outline-none transition"></select>
+            <select id="birth-month" aria-label="출생 월" class="bg-obsidian border border-gray-700 focus:border-purple-500 rounded-2xl px-2.5 sm:px-3 py-3 text-xs sm:text-sm text-white outline-none transition"></select>
+            <select id="birth-day" aria-label="출생 일" class="bg-obsidian border border-gray-700 focus:border-purple-500 rounded-2xl px-2.5 sm:px-3 py-3 text-xs sm:text-sm text-white outline-none transition"></select>
+          </div>
+        </div>
+
+        <div class="space-y-2.5">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <label for="birth-time-mode" class="text-xs font-semibold text-gray-300">태어난 시각 입력 방식</label>
+          </div>
+          <select id="birth-time-mode" class="w-full bg-obsidian border border-gray-700 focus:border-purple-500 rounded-2xl px-3.5 py-3 text-xs sm:text-sm text-white outline-none transition">
+            <option value="exact" selected>정확한 시·분 직접 입력 (권장)</option>
+            <option value="unknown">시간 모름 (삼주 분석)</option>
+          </select>
+          <div id="exact-time-row" class="grid grid-cols-2 gap-2">
+            <div>
+              <label for="birth-hour" class="block text-[11px] text-gray-400 mb-1">시 (0~23시)</label>
+              <select id="birth-hour" class="w-full bg-obsidian border border-gray-700 focus:border-purple-500 rounded-2xl px-3 py-2.5 text-xs sm:text-sm text-white outline-none transition"></select>
+            </div>
+            <div>
+              <label for="birth-minute" class="block text-[11px] text-gray-400 mb-1">분 (0~59분)</label>
+              <select id="birth-minute" class="w-full bg-obsidian border border-gray-700 focus:border-purple-500 rounded-2xl px-3 py-2.5 text-xs sm:text-sm text-white outline-none transition"></select>
+            </div>
+          </div>
+          <div id="yajasi-row" class="hidden bg-obsidian/80 border border-gray-800 rounded-2xl p-3 flex items-center justify-between gap-2">
+            <span class="text-[11px] text-gray-300">밤 11시~11시 59분 출생 기준</span>
+            <select id="yajasi-mode" class="bg-cardbg border border-gray-700 rounded-xl px-2.5 py-1.5 text-[11px] text-amber-200 outline-none">
+              <option value="next_day" selected>오늘 날짜 기준으로 보기</option>
+              <option value="next_cycle">다음 날 기준으로 보기</option>
+            </select>
+          </div>
+          <div class="pt-0.5">
+            <div class="flex items-center justify-between gap-2 mb-1">
+              <label for="birth-region" class="text-[11px] font-medium text-gray-400">태어난 지역 <span class="text-gray-500">(선택)</span></label>
+            </div>
+            <select id="birth-region" class="w-full bg-obsidian/80 border border-gray-800 focus:border-purple-500 rounded-2xl px-3.5 py-2.5 text-xs sm:text-sm text-gray-200 outline-none transition">
+              <option value="seoul" selected>서울</option>
+              <option value="incheon">인천</option>
+              <option value="gyeonggi_suwon">경기 · 수원</option>
+              <option value="gangwon_chuncheon">강원 · 춘천</option>
+              <option value="gangwon_gangneung">강원 · 강릉/동해</option>
+              <option value="daejeon_sejong">대전 · 세종</option>
+              <option value="chungbuk_cheongju">충북 · 청주</option>
+              <option value="chungnam_cheonan">충남 · 천안</option>
+              <option value="gwangju">광주</option>
+              <option value="jeonbuk_jeonju">전북 · 전주</option>
+              <option value="jeonnam_mokpo">전남 · 목포</option>
+              <option value="daegu">대구</option>
+              <option value="gyeongbuk_pohang">경북 · 포항</option>
+              <option value="gyeongbuk_andong">경북 · 안동</option>
+              <option value="busan">부산</option>
+              <option value="ulsan">울산</option>
+              <option value="gyeongnam_changwon">경남 · 창원</option>
+              <option value="jeju">제주</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <span class="block text-xs font-semibold text-gray-300 mb-1.5">성별</span>
+          <div class="grid grid-cols-2 gap-2 h-[42px]">
+            <label class="cursor-pointer">
+              <input type="radio" name="gender" value="M" checked class="peer sr-only" />
+              <div class="h-full flex items-center justify-center rounded-2xl border border-gray-700 bg-obsidian text-xs sm:text-sm font-medium text-gray-400 peer-checked:border-amber-500 peer-checked:bg-amber-500/15 peer-checked:text-amber-300 transition">
+                남성
+              </div>
+            </label>
+            <label class="cursor-pointer">
+              <input type="radio" name="gender" value="F" class="peer sr-only" />
+              <div class="h-full flex items-center justify-center rounded-2xl border border-gray-700 bg-obsidian text-xs sm:text-sm font-medium text-gray-400 peer-checked:border-purple-500 peer-checked:bg-purple-500/15 peer-checked:text-purple-300 transition">
+                여성
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" id="today-gacha-luck-btn" class="w-full py-3.5 sm:py-4 rounded-2xl font-extrabold text-sm sm:text-base text-gray-950 bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 hover:brightness-110 active:scale-[0.99] transition shadow-lg shadow-amber-500/25 flex items-center justify-center gap-2">
+          <span>🔮</span>
+          <span>오늘의 가챠운 보기</span>
+        </button>
+      </form>
+    </section>
+
+    <section id="loading-section" class="hidden bg-cardbg border border-purple-500/40 rounded-3xl p-4 sm:p-6 text-center space-y-4 mystic-glow">
+      <div class="space-y-1.5">
+        <div class="w-12 h-12 mx-auto rounded-2xl bg-purple-500/20 border border-purple-400/40 flex items-center justify-center text-xl">
+          🧭
+        </div>
+        <h3 id="loading-status" class="text-sm sm:text-base font-bold text-white">태어난 날과 오늘의 기운을 살피는 중...</h3>
+        <p class="text-[11px] sm:text-xs text-gray-400">입력한 정보와 오늘 날짜의 기운을 맞춰보고 있습니다</p>
+      </div>
+
+      <div class="w-full bg-gray-800 rounded-full h-2 overflow-hidden">
+        <div id="loading-bar" class="bg-gradient-to-r from-purple-500 via-amber-400 to-yellow-300 h-full w-0 transition-all duration-200"></div>
+      </div>
+
+      <div id="ad-slot-middle" class="min-h-[88px] rounded-2xl border border-gray-800 ad-slot p-3 flex flex-col justify-center space-y-1">
+        <div class="flex items-center justify-between text-[10px] text-gray-500">
+          <span class="px-1.5 py-0.5 rounded bg-gray-800 text-gray-400 font-semibold">AD</span>
+          <span>#ad-slot-middle</span>
+        </div>
+        <p class="text-[11px] text-gray-500 py-2">스폰서 배너 영역</p>
+      </div>
+
+
+    </section>
+
+    <section id="result-section" class="hidden space-y-4">
+
+      <div class="flex items-center justify-end gap-2 px-1">
+        <button type="button" id="retry-btn" class="text-xs text-gray-400 hover:text-white underline underline-offset-4 shrink-0 py-1">
+          ← 다시 입력하기
+        </button>
+      </div>
+
+      <div class="grid grid-cols-3 gap-1.5 bg-cardbg p-1.5 rounded-2xl border border-cardborder">
+        <button type="button" data-tab="tab-summary" class="tab-btn py-2.5 px-1.5 rounded-xl text-[11px] sm:text-sm font-bold bg-amber-500 text-gray-950 transition">
+          1. 종합 비틱운
+        </button>
+        <button type="button" data-tab="tab-ritual" class="tab-btn py-2.5 px-1.5 rounded-xl text-[11px] sm:text-sm font-bold text-gray-400 hover:text-white transition">
+          2. 성향·개운법
+        </button>
+        <button type="button" data-tab="tab-calendar" class="tab-btn py-2.5 px-1.5 rounded-xl text-[11px] sm:text-sm font-bold text-gray-400 hover:text-white transition">
+          3. 주간 황금일
+        </button>
+      </div>
+
+      <div id="tab-summary" class="tab-panel space-y-3.5">
+        <div id="viral-card" class="bg-gradient-to-b from-[#171C2C] to-[#0E111B] border-2 border-amber-500/50 rounded-3xl p-4 sm:p-6 ssr-glow space-y-4 sm:space-y-5">
+          <div class="flex items-start justify-between gap-2">
+            <div class="min-w-0">
+              <span id="res-date-label" class="text-[11px] sm:text-xs font-semibold text-amber-400 block">기준일</span>
+              <h2 id="res-user-title" class="text-sm sm:text-lg font-extrabold text-white mt-0.5 truncate">플레이어</h2>
+            </div>
+            <div id="res-grade-badge" class="px-3 py-1.5 rounded-2xl bg-amber-500/20 border border-amber-400 text-amber-300 font-black text-xs sm:text-sm tracking-wider shrink-0">
+              SSR
+            </div>
+          </div>
+
+          <div class="bg-obsidian/80 border border-gray-800 rounded-2xl p-3.5 sm:p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
+            <div>
+              <p class="text-[11px] sm:text-xs text-gray-400 font-medium">오늘의 비틱(조기당첨) 등급</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span id="res-score" class="text-5xl sm:text-6xl font-black text-amber-400 tracking-tight">A</span>
+                <span id="res-grade-sub" class="text-xs sm:text-sm text-gray-300 font-bold">매우 좋음</span>
+              </div>
+              <p id="res-pick-risk" class="text-[11px] sm:text-xs text-emerald-400 font-semibold mt-1.5">
+                ● 픽뚫 위험도
+              </p>
+            </div>
+            <div class="w-full sm:w-auto sm:text-right flex sm:flex-col items-center sm:items-end justify-between gap-1.5 pt-2 sm:pt-0 border-t sm:border-t-0 border-gray-800/80">
+              <div class="px-3 py-1.5 rounded-xl bg-purple-500/15 border border-purple-500/30">
+                <p class="text-[10px] text-purple-300">황금 시간대</p>
+                <p id="res-best-time" class="text-xs sm:text-sm font-extrabold text-white">11:30 ~ 13:30</p>
+              </div>
+              <span id="res-interaction-badge" class="text-[11px] px-2.5 py-0.5 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-300 font-semibold">
+                일진 관계: 평탄
+              </span>
+            </div>
+          </div>
+
+          <div id="factor-chips" class="flex flex-wrap gap-1.5"></div>
+
+          <div class="bg-obsidian/90 border border-gray-800/90 rounded-2xl p-3.5 sm:p-4 space-y-2">
+            <h3 class="text-xs font-bold text-amber-300 flex items-center gap-1.5">
+              <span>📜</span> 점괘 핵심 요약 (주의점 포함)
+            </h3>
+            <ul id="res-summary-list" class="space-y-2 text-xs sm:text-sm text-gray-200 leading-relaxed"></ul>
+          </div>
+
+          <div class="flex items-center justify-between text-[10px] text-gray-500 pt-1 border-t border-gray-800/80">
+            <span>가챠 사주운세 · 정밀 만세력</span>
+            <span>카드 PNG 저장 · 텍스트 복사 지원</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          <button type="button" id="download-card-btn" class="py-3 px-3 rounded-2xl bg-amber-500 hover:bg-amber-400 text-gray-950 font-extrabold text-xs transition flex items-center justify-center gap-1.5 shadow-md shadow-amber-500/20">
+            <span>🖼️</span>
+            <span>카드 PNG 저장</span>
+          </button>
+          <button type="button" id="copy-share-btn" class="py-3 px-3 rounded-2xl bg-gray-800 hover:bg-gray-700 text-amber-300 border border-amber-500/30 font-bold text-xs transition flex items-center justify-center gap-1.5">
+            <span>📋</span>
+            <span>텍스트 복사</span>
+          </button>
+        </div>
+
+        <button type="button" id="next-tab-btn" class="w-full py-3 px-4 rounded-2xl bg-cardbg hover:bg-gray-800/80 text-gray-200 border border-cardborder font-bold text-xs transition flex items-center justify-center gap-2">
+          <span>⏰</span>
+          <span>2. 성향 분석 & 개운 루틴 보기 →</span>
+        </button>
+      </div>
+
+      <div id="tab-ritual" class="tab-panel hidden space-y-4">
+        <div class="bg-cardbg border border-cardborder rounded-3xl p-4 sm:p-6 space-y-4">
+          <h3 class="text-sm sm:text-base font-extrabold text-white flex items-center gap-2">
+            <span class="text-amber-400">⏳</span> 오늘의 기운·성향 기반 가챠 개운 루틴
+          </h3>
+
+          <div class="bg-obsidian border border-purple-500/25 rounded-2xl p-3.5 space-y-1.5">
+            <div class="flex items-center justify-between gap-2">
+              <span class="text-[11px] font-bold text-purple-300">오늘의 기운 타입 & 핵심 흐름</span>
+              <span id="ritual-ten-gods" class="text-xs font-extrabold text-amber-300">-</span>
+            </div>
+            <p id="ritual-ten-god-note" class="text-xs text-gray-300 leading-relaxed">-</p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="bg-obsidian border border-gray-800 rounded-2xl p-3.5">
+              <span class="text-[11px] text-gray-400 block">추천 가챠 시간대</span>
+              <span id="ritual-time" class="text-sm sm:text-base font-black text-amber-300 mt-1 block">-</span>
+              <span id="ritual-time-desc" class="text-[11px] text-gray-400 mt-0.5 block">-</span>
+            </div>
+            <div class="bg-obsidian border border-gray-800 rounded-2xl p-3.5">
+              <span class="text-[11px] text-gray-400 block">행운의 방위 · 컬러</span>
+              <span id="ritual-dir" class="text-sm sm:text-base font-black text-purple-300 mt-1 block">-</span>
+              <span id="ritual-color" class="text-[11px] text-gray-400 mt-0.5 block">-</span>
+            </div>
+          </div>
+
+          <div class="bg-obsidian border border-gray-800 rounded-2xl p-3.5 sm:p-4 space-y-1.5">
+            <p class="text-xs font-bold text-emerald-400">✅ 추천 뽑기 방식 (단차 vs 10연차)</p>
+            <p id="ritual-pull-style" class="text-xs sm:text-sm text-gray-200 leading-relaxed"></p>
+          </div>
+
+          <div class="bg-rose-950/30 border border-rose-500/30 rounded-2xl p-3.5 sm:p-4 space-y-1.5">
+            <p class="text-xs font-bold text-rose-400">🚨 브레이크 경고 (멈춰야 할 타이밍)</p>
+            <p id="ritual-warning" class="text-xs sm:text-sm text-gray-200 leading-relaxed"></p>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab-calendar" class="tab-panel hidden space-y-4">
+        <div class="bg-cardbg border border-cardborder rounded-3xl p-4 sm:p-6 space-y-4">
+          <div class="flex items-center justify-between gap-2">
+            <h3 class="text-sm sm:text-base font-extrabold text-white flex items-center gap-2">
+              <span class="text-amber-400">📅</span> 향후 7일 가챠 길일 캘린더
+            </h3>
+            <span id="calendar-range-label" class="text-[11px] text-gray-400 shrink-0">-</span>
+          </div>
+          <p class="text-xs text-gray-400">
+            오늘부터 7일 동안 뽑기 흐름이 좋은 날을 한눈에 비교해 보세요.
+          </p>
+          <div id="calendar-list" class="space-y-2.5"></div>
+        </div>
+      </div>
+
+      <div id="ad-slot-bottom" class="w-full min-h-[60px] sm:min-h-[68px] rounded-xl border border-gray-800/90 ad-slot px-3 py-1.5 flex items-center justify-between gap-2 text-[11px] text-gray-500">
+        <div class="flex items-center gap-2 min-w-0">
+          <span class="px-1.5 py-0.5 rounded bg-gray-800/90 text-[10px] font-semibold text-gray-400 shrink-0">AD</span>
+          <span class="truncate">하단 배너 영역 · #ad-slot-bottom</span>
+        </div>
+        <span class="text-[10px] text-gray-600 shrink-0">SLOT #3</span>
+      </div>
+
+    </section>
+
+    <section id="guide-section" class="bg-cardbg/90 border border-cardborder rounded-3xl p-4 sm:p-6 space-y-5 text-xs sm:text-sm text-gray-300 leading-relaxed">
+      <div class="border-b border-gray-800 pb-3 space-y-1">
+        <span class="text-[11px] font-bold text-amber-400 uppercase tracking-wider">가챠 운세 & 사주 가이드</span>
+        <h2 class="text-base sm:text-lg font-extrabold text-white">가챠 사주운세 활용법과 풀이 기준</h2>
+        <p class="text-xs text-gray-400">
+          뽑기 전 흐름을 가볍게 점검하고, 무리한 추격 뽑기를 줄이기 위한 참고 가이드입니다.
+        </p>
+      </div>
+
+      <div class="space-y-2.5">
+        <h3 class="text-xs sm:text-sm font-bold text-amber-300">1. 어떤 요소가 오늘의 등급(S · A~F)을 만들까?</h3>
+        <p class="text-xs text-gray-300">
+          가챠 사주운세는 출생 연·월·일·시·분과 선택한 지역, KST 24절기 기준 월주·연주를 산출한 뒤, 선택한 날짜의 일진과 맞물리는 흐름을 종합해 <strong class="text-white">S부터 F까지 6단계 등급</strong>으로 보여줍니다.
+        </p>
+        <ul class="space-y-1.5 text-xs text-gray-300 pl-1">
+          <li>• <strong class="text-purple-300">일간·시지 & 신강·신약:</strong> 타고난 일간의 기운과 계절·지지 세력의 조화를 살펴 오늘 흐름이 부담스러운지, 수월한지 가늠합니다.</li>
+          <li>• <strong class="text-purple-300">십성 & 12운성:</strong> 당일 천간·지장간과 만나는 기운(식신·정재·편재·겁재·편관 등)과 12운성 리듬을 반영해 템포와 주의 포인트를 잡습니다.</li>
+          <li>• <strong class="text-purple-300">합·충·형·파·해 & 삼합:</strong> 일지 및 사주 지지와의 조화·충돌 여부를 확인해 변동성이 큰 날과 안정적인 날을 구분합니다.</li>
+        </ul>
+      </div>
+
+      <div class="space-y-2.5">
+        <h3 class="text-xs sm:text-sm font-bold text-amber-300">2. 추천 뽑기 템포 & 과금 브레이크 루틴</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+          <div class="bg-obsidian/90 border border-gray-800 rounded-2xl p-3.5 space-y-1">
+            <p class="font-bold text-emerald-300">예산·횟수 먼저 정하기</p>
+            <p class="text-gray-400 leading-relaxed">뽑기 버튼을 누르기 전에 오늘 쓸 최대 재화나 횟수를 먼저 정해 두면, 결과가 흔들려도 페이스를 잃지 않기 쉽습니다.</p>
+          </div>
+          <div class="bg-obsidian/90 border border-gray-800 rounded-2xl p-3.5 space-y-1">
+            <p class="font-bold text-rose-300">“한 번만 더” 멈춤 신호</p>
+            <p class="text-gray-400 leading-relaxed">목표에 도달했거나 예산 한도에 닿았을 때 이어가는 연타가 가장 피로도를 키웁니다. 3번 탭의 [주간 황금일]에서 다른 날도 비교해 보세요.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-2.5">
+        <h3 class="text-xs sm:text-sm font-bold text-amber-300">3. 자주 묻는 질문 (FAQ)</h3>
+        <div class="space-y-2 text-xs">
+          <details class="bg-obsidian/80 border border-gray-800 rounded-2xl px-3.5 py-2.5">
+            <summary class="cursor-pointer font-bold text-gray-200 select-none">Q. 실제 게임 뽑기 확률이나 당첨 결과에 영향을 주나요?</summary>
+            <p class="mt-2 text-gray-400 leading-relaxed">아니요. 실제 가챠·뽑기 결과는 각 게임이나 플랫폼의 확률 시스템에 따라 결정되며, 본 서비스는 사주 기운과 일진 흐름을 활용한 재미·엔터테인먼트용 운세입니다.</p>
+          </details>
+          <details class="bg-obsidian/80 border border-gray-800 rounded-2xl px-3.5 py-2.5">
+            <summary class="cursor-pointer font-bold text-gray-200 select-none">Q. 입력한 생년월일과 시간은 서버에 저장되나요?</summary>
+            <p class="mt-2 text-gray-400 leading-relaxed">입력하신 생년월일, 시각, 지역, 점칠 날짜는 브라우저 화면에서 운세 계산과 카드 이미지 생성을 위해 사용되며, 별도의 외부 회원 DB로 수집·저장하지 않습니다.</p>
+          </details>
+          <details class="bg-obsidian/80 border border-gray-800 rounded-2xl px-3.5 py-2.5">
+            <summary class="cursor-pointer font-bold text-gray-200 select-none">Q. 전문 만세력 앱과 결과가 조금 다를 수 있나요?</summary>
+            <p class="mt-2 text-gray-400 leading-relaxed">네. 절기 경계 계산, 야자시 처리 방식, 가중치 산식 등 간이 웹 산식을 적용하고 있으므로 전통 만세력이나 역술원 풀이와 차이가 날 수 있습니다.</p>
+          </details>
+        </div>
+      </div>
+
+      <div class="space-y-2.5 pt-1 border-t border-gray-800/80">
+        <h3 class="text-xs sm:text-sm font-bold text-amber-300">4. 검색 노출(구글 · 네이버)을 위해 앞으로 할 일</h3>
+        <ul class="space-y-1.5 text-xs text-gray-300 pl-1">
+          <li>• <strong class="text-purple-300">도메인·HTTPS 배포:</strong> 호스팅에 <code class="text-amber-200">index.html</code>로 업로드하고, <code class="text-head</code> 주석의 <code class="text-amber-200">canonical</code> 및 <code class="text-amber-200">og:url</code>을 실제 주소로 반영합니다.</li>
+          <li>• <strong class="text-purple-300">구글 서치 콘솔 등록:</strong> 속성을 추가하고 소유권을 인증한 뒤, URL 검사에서 <strong>색인 생성 요청</strong>을 제출합니다.</li>
+          <li>• <strong class="text-purple-300">네이버 서치어드바이저 등록:</strong> 사이트 등록 및 소유확인(<code class="text-amber-200">naver-site-verification</code> 또는 인증 HTML 파일) 후 <strong>요청 &gt; 웹페이지 수집</strong>을 진행합니다.</li>
+          <li>• <strong class="text-purple-300">공유 유입 & 콘텐츠 보완:</strong> 카드 PNG·텍스트 공유로 초기 방문자를 모으고, 검색 반응에 맞춰 FAQ·해설 항목을 꾸준히 다듬습니다.</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="pt-1 pb-6 space-y-3">
+      <details id="policy-details" class="group bg-cardbg/70 border border-gray-800 rounded-2xl overflow-hidden">
+        <summary class="cursor-pointer px-4 py-3 text-xs font-semibold text-gray-300 hover:text-white flex items-center justify-between select-none">
+          <span>🛡️ 서비스 소개 · 개인정보처리방침 · 문의 안내</span>
+          <span class="group-open:rotate-180 transition-transform">▼</span>
+        </summary>
+        <div class="px-4 pb-4 pt-2 text-xs text-gray-300 space-y-2.5 border-t border-gray-800/80 leading-relaxed">
+          <p><strong class="text-amber-300">서비스 소개:</strong> ‘가챠 사주운세’는 생년월일·시·분 및 지역을 바탕으로 오늘의 비틱 등급, 황금 시간대, 개운 루틴, 향후 7일 길일 흐름을 제공하는 웹 엔터테인먼트 서비스입니다.</p>
+          <p><strong class="text-amber-300">사주 계산 기준:</strong> 양력 생년월일과 KST 24절기를 기준으로 사주 명식과 당일 일진 상호작용을 계산하며, 간이 산식이므로 참고용으로만 활용해 주세요.</p>
+          <p><strong class="text-amber-300">개인정보처리방침 및 쿠키·광고 안내:</strong> 이용자가 선택한 생년월일·시간·지역 정보는 브라우저 내 계산 및 결과 카드 생성에 사용되며 서버에 영구 저장하지 않습니다. 광고 서비스(예: Google AdSense 등) 도입 시 맞춤형·비맞춤형 광고 제공을 위해 브라우저 쿠키 또는 유사 기술이 사용될 수 있으며, 브라우저 설정에서 쿠키 저장을 관리할 수 있습니다.</p>
+          <p><strong class="text-amber-300">엔터테인먼트 & 과금 주의:</strong> 본 콘텐츠는 오락 및 자기점검 목적이며 실제 확률이나 수익·당첨을 보증하지 않습니다. 과도한 지출이나 사행적 이용은 자제해 주세요.</p>
+          <p><strong class="text-amber-300">문의 안내:</strong> 서비스 개선 제안, 오류 제보 및 광고/제휴 문의는 웹사이트 배포 도메인 안내 채널 또는 운영자 이메일(<span class="text-gray-200">jmc4061@gmail.com</span>)을 통해 접수할 수 있습니다.</p>
+        </div>
+      </details>
+      <p class="text-center text-[11px] text-gray-500">
+        © <span id="footer-year">2026</span> 가챠 사주운세 · 재미로 보는 오늘의 가챠 사주
+      </p>
+    </footer>
+
+  </div>
+
+  <script>
+const STEMS = ['갑', '을', '병', '정', '무', '기', '경', '신', '임', '계'];
+const BRANCHES = ['자', '축', '인', '묘', '진', '사', '오', '미', '신', '유', '술', '해'];
+const WEEKDAYS_KO = ['일', '월', '화', '수', '목', '금', '토'];
+const UNSEONG_12 = ['장생', '목욕', '관대', '건록', '제왕', '쇠', '병', '사', '묘', '절', '태', '양'];
+
+const STEM_INFO = {
+  '갑': { el: '목', yy: '양' },
+  '을': { el: '목', yy: '음' },
+  '병': { el: '화', yy: '양' },
+  '정': { el: '화', yy: '음' },
+  '무': { el: '토', yy: '양' },
+  '기': { el: '토', yy: '음' },
+  '경': { el: '금', yy: '양' },
+  '신': { el: '금', yy: '음' },
+  '임': { el: '수', yy: '양' },
+  '계': { el: '수', yy: '음' }
+};
+
+const BRANCH_ELEMENTS = {
+  '자': '수', '축': '토', '인': '목', '묘': '목',
+  '진': '토', '사': '화', '오': '화', '미': '토',
+  '신': '금', '유': '금', '술': '토', '해': '수'
+};
+
+const BRANCH_HIDDEN_STEMS = {
+  '자': ['임', '계'],
+  '축': ['계', '신', '기'],
+  '인': ['무', '병', '갑'],
+  '묘': ['갑', '을'],
+  '진': ['을', '계', '무'],
+  '사': ['무', '경', '병'],
+  '오': ['병', '기', '정'],
+  '미': ['정', '을', '기'],
+  '신': ['무', '임', '경'],
+  '유': ['경', '신'],
+  '술': ['신', '정', '무'],
+  '해': ['무', '갑', '임']
+};
+
+const STEM_HARMONY_PAIRS = [
+  ['갑', '기'], ['을', '경'], ['병', '신'], ['정', '임'], ['무', '계']
+];
+
+const BRANCH_YUKHAP_PAIRS = [
+  ['자', '축'], ['인', '해'], ['묘', '술'], ['진', '유'], ['사', '신'], ['오', '미']
+];
+
+const BRANCH_CHUNG_PAIRS = [
+  ['자', '오'], ['축', '미'], ['인', '신'], ['묘', '유'], ['진', '술'], ['사', '해']
+];
+
+const BRANCH_HYUNG_PAIRS = [
+  ['인', '사'], ['사', '신'], ['인', '신'],
+  ['축', '술'], ['술', '미'], ['축', '미'],
+  ['자', '묘']
+];
+
+const BRANCH_PA_PAIRS = [
+  ['자', '유'], ['오', '묘'], ['사', '신'], ['인', '해'], ['진', '축'], ['술', '미']
+];
+
+const BRANCH_HAE_PAIRS = [
+  ['자', '미'], ['축', '오'], ['인', '사'], ['묘', '진'], ['신', '해'], ['유', '술']
+];
+
+const SAMHAP_GROUPS = [
+  { name: '수국삼합', branches: ['신', '자', '진'], el: '수' },
+  { name: '목국삼합', branches: ['해', '묘', '미'], el: '목' },
+  { name: '화국삼합', branches: ['인', '오', '술'], el: '화' },
+  { name: '금국삼합', branches: ['사', '유', '축'], el: '금' }
+];
+
+const ELEMENT_GUIDE = {
+  '목': { dir: '동쪽 · 초록 화분 근처', color: '그린 · 민트' },
+  '화': { dir: '남쪽 · 밝은 조명 아래', color: '골드 · 레드' },
+  '토': { dir: '중앙 · 안정된 책상 위', color: '베이지 · 브라운' },
+  '금': { dir: '서쪽 · 깔끔한 금속/화이트 톤', color: '화이트 · 실버' },
+  '수': { dir: '북쪽 · 조용한 밤/물가 근처', color: '네이비 · 블랙' }
+};
+
+const TEN_GOD_GUIDE = {
+  '비견': { group: '비겁', delta: 2, note: '주도권과 마이페이스 기운이 살아납니다. 남의 말보다 내 기준을 지키는 편이 유리합니다.' },
+  '겁재': { group: '비겁', delta: -3, note: '경쟁·과열 심리가 자극되기 쉬운 날입니다. "한 번만 더" 추격 매수를 조심하세요.' },
+  '식신': { group: '식상', delta: 9, note: '흐름과 감각이 부드럽게 풀리는 식신 기운입니다. 가벼운 템포로 시도하기 좋습니다.' },
+  '상관': { group: '식상', delta: 5, note: '변칙과 돌발 변수가 돋보이는 상관 기운입니다. 기대와 다른 연출이 나올 수 있어 완급 조절이 중요합니다.' },
+  '편재': { group: '재성', delta: 14, note: '큰 판·벼락 수확을 떠올리게 하는 편재 기운입니다. 목표를 정해 두고 욕심 과열만 막으세요.' },
+  '정재': { group: '재성', delta: 12, note: '차곡차곡 챙기는 정재 기운이 들어옵니다. 계획한 예산 내에서 깔끔하게 결과를 노려보세요.' },
+  '편관': { group: '관성', delta: -5, note: '압박감이나 변수가 생기기 쉬운 편관 기운입니다. 무리한 승부보다 관망이 유리할 수 있습니다.' },
+  '정관': { group: '관성', delta: -1, note: '절제와 원칙이 강조되는 정관 기운입니다. 정해진 규칙·한도 안에서만 움직이세요.' },
+  '편인': { group: '인성', delta: 4, note: '직관과 촉이 번뜩이는 편인 기운입니다. 생각이 많아질 수 있으니 핵심만 간단히 보세요.' },
+  '정인': { group: '인성', delta: 7, note: '보호와 정돈의 정인 기운이 작용합니다. 재화 관리와 판단력이 차분하게 받쳐줍니다.' }
+};
+
+const STEM_SAJU_TITLE = {
+  '갑': '갑목(甲木) 일간',
+  '을': '을목(乙木) 일간',
+  '병': '병화(丙火) 일간',
+  '정': '정화(丁火) 일간',
+  '무': '무토(戊土) 일간',
+  '기': '기토(己土) 일간',
+  '경': '경금(庚金) 일간',
+  '신': '신금(辛金) 일간',
+  '임': '임수(壬水) 일간',
+  '계': '계수(癸水) 일간'
+};
+
+const BRANCH_SIJI_LABEL = {
+  '자': '자시(子時)',
+  '축': '축시(丑時)',
+  '인': '인시(寅時)',
+  '묘': '묘시(卯時)',
+  '진': '진시(辰時)',
+  '사': '사시(巳時)',
+  '오': '오시(午時)',
+  '미': '미시(未時)',
+  '신': '신시(申時)',
+  '유': '유시(酉時)',
+  '술': '술시(戌時)',
+  '해': '해시(亥時)'
+};
+
+function getStemFriendlyTitle(stem) {
+  return STEM_SAJU_TITLE[stem] || '일간 기준';
+}
+
+function getBranchFriendlyTitle(branch) {
+  if (!branch || branch === '?') return '시지 미상';
+  return BRANCH_SIJI_LABEL[branch] || `${branch}시`;
+}
+
+function getStrengthFriendlyTitle(strengthLabel) {
+  return strengthLabel || '중화';
+}
+
+function getTenGodFriendlyTitle(tenGod) {
+  return tenGod || '평운';
+}
+
+function getUnseongFriendlyTitle(unseong) {
+  return (!unseong || unseong === '-') ? '12운성 평탄' : `${unseong}운`;
+}
+
+
+function isPairMatch(a, b, pairList) {
+  return pairList.some(([x, y]) => (x === a && y === b) || (x === b && y === a));
+}
+
+function getElementRelation(dayEl, targetEl) {
+  const order = ['목', '화', '토', '금', '수'];
+  const dIdx = order.indexOf(dayEl);
+  const tIdx = order.indexOf(targetEl);
+  const diff = (tIdx - dIdx + 5) % 5;
+  return ['비겁', '식상', '재성', '관성', '인성'][diff];
+}
+
+function getTenGod(dayStem, targetStem) {
+  const d = STEM_INFO[dayStem];
+  const t = STEM_INFO[targetStem];
+  const order = ['목', '화', '토', '금', '수'];
+  const diff = (order.indexOf(t.el) - order.indexOf(d.el) + 5) % 5;
+  const sameYY = (d.yy === t.yy);
+  const map = {
+    0: ['비견', '겁재'],
+    1: ['식신', '상관'],
+    2: ['편재', '정재'],
+    3: ['편관', '정관'],
+    4: ['편인', '정인']
+  };
+  return map[diff][sameYY ? 0 : 1];
+}
+
+function getTwelveUnseong(dayStem, branch) {
+  if (!branch || branch === '?') return '-';
+  const yangStartMap = { '갑': '해', '병': '인', '무': '인', '경': '사', '임': '신' };
+  const info = STEM_INFO[dayStem];
+  const effectiveStem = info.yy === '양' ? dayStem : STEMS[(STEMS.indexOf(dayStem) + 9) % 10];
+  const startBranch = yangStartMap[effectiveStem];
+  const startIdx = BRANCHES.indexOf(startBranch);
+  const curIdx = BRANCHES.indexOf(branch);
+  const step = info.yy === '양' ? ((curIdx - startIdx + 12) % 12) : ((startIdx - curIdx + 12) % 12);
+  return UNSEONG_12[step];
+}
+
+function julianDayFromUtc(year, month, day, hour = 0.0) {
+  let y = year;
+  let m = month;
+  if (m <= 2) {
+    y -= 1;
+    m += 12;
+  }
+  const A = Math.floor(y / 100);
+  const B = 2 - A + Math.floor(A / 4);
+  return Math.floor(365.25 * (y + 4716)) + Math.floor(30.6001 * (m + 1)) + day + (hour / 24.0) + B - 1524.5;
+}
+
+function sunLonDeg(jd) {
+  // Higher-order orbital elements & periodic terms (VSOP87/Meeus-inspired refinement)
+  const T = (jd - 2451545.0) / 36525.0;
+  const L0 = ((280.4664567 + T * (36000.76982779 + T * (0.0003032028 + T * (1.0 / 49931000.0 - T * (1.0 / 153000000.0))))) % 360.0 + 360.0) % 360.0;
+  const M = 357.5291092 + T * (35999.0502909 - T * (0.0001536667 - T * (1.0 / 24490000.0)));
+  const Mr = (M * Math.PI) / 180.0;
+  const C = (1.914602 - T * (0.004817 + T * 0.000014)) * Math.sin(Mr)
+    + (0.019993 - T * 0.000101) * Math.sin(2 * Mr)
+    + 0.000289 * Math.sin(3 * Mr);
+  const trueLong = ((L0 + C) % 360.0 + 360.0) % 360.0;
+  const omega = 125.04452 - 1934.136261 * T + 0.0020708 * T * T + (T * T * T) / 450000.0;
+  const lambdaApp = trueLong - 0.00569 - 0.00478 * Math.sin((omega * Math.PI) / 180.0);
+  // Subtle planetary perturbation terms for sub-arcminute term boundary accuracy
+  const pert = 0.00047 * Math.cos(((134.96 + 477198.87 * T) * Math.PI) / 180.0)
+    + 0.00035 * Math.cos(((257.12 + 29810.42 * T) * Math.PI) / 180.0);
+  return ((lambdaApp + pert) % 360.0 + 360.0) % 360.0;
+}
+
+
+function jdToKstTuple(jdUtc) {
+  const kstDays = jdUtc + (9.0 / 24.0) + 0.5;
+  const Z = Math.floor(kstDays);
+  const F = kstDays - Z;
+  let A = Z;
+  if (Z >= 2299161) {
+    const alpha = Math.floor((Z - 1867216.25) / 36524.25);
+    A = Z + 1 + alpha - Math.floor(alpha / 4);
+  }
+  const B = A + 1524;
+  const C = Math.floor((B - 122.1) / 365.25);
+  const D = Math.floor(365.25 * C);
+  const E = Math.floor((B - D) / 30.6001);
+  const dayOut = B - D - Math.floor(30.6001 * E);
+  const monthOut = E < 14 ? (E - 1) : (E - 13);
+  const yearOut = monthOut > 2 ? (C - 4716) : (C - 4715);
+  const totalMins = Math.round(F * 24 * 60);
+  const hh = Math.floor(totalMins / 60) % 24;
+  const mm = totalMins % 60;
+  return [yearOut, monthOut, dayOut, hh, mm];
+}
+
+function getSolarTermKst(year, termIdx) {
+  const targetLon = ((315.0 + termIdx * 15.0) % 360.0 + 360.0) % 360.0;
+  const approxMonths = [2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 1, 1];
+  const approxDays = [4, 19, 6, 21, 5, 20, 6, 21, 6, 21, 7, 23, 8, 23, 8, 23, 8, 23, 7, 22, 7, 22, 6, 20];
+  const m = approxMonths[termIdx];
+  const d = approxDays[termIdx];
+  let y = year;
+  if (termIdx >= 22 && m === 1) y = year + 1;
+  else if (termIdx === 23 && m === 12) y = year - 1;
+  const jd0 = julianDayFromUtc(y, m, d, 0.0) - (9.0 / 24.0);
+  let lo = jd0 - 1.5;
+  let hi = jd0 + 1.5;
+  for (let i = 0; i < 60; i++) {
+    const mid = 0.5 * (lo + hi);
+    const diff = (((sunLonDeg(mid) - targetLon + 180.0) % 360.0) + 360.0) % 360.0 - 180.0;
+    if (diff < 0) lo = mid;
+    else hi = mid;
+  }
+  return jdToKstTuple(0.5 * (lo + hi));
+}
+
+function toMinutes(y, m, d, hh = 12, mm = 0) {
+  const jd = julianDayFromUtc(y, m, d, 0.0);
+  return Math.round(jd * 1440.0) + hh * 60 + mm;
+}
+
+const BIRTH_REGIONS = {
+  seoul: { name: '서울', code: 1 },
+  incheon: { name: '인천', code: 2 },
+  gyeonggi_suwon: { name: '경기 · 수원', code: 3 },
+  gangwon_chuncheon: { name: '강원 · 춘천', code: 4 },
+  gangwon_gangneung: { name: '강원 · 강릉/동해', code: 5 },
+  daejeon_sejong: { name: '대전 · 세종', code: 6 },
+  chungbuk_cheongju: { name: '충북 · 청주', code: 7 },
+  chungnam_cheonan: { name: '충남 · 천안', code: 8 },
+  gwangju: { name: '광주', code: 9 },
+  jeonbuk_jeonju: { name: '전북 · 전주', code: 10 },
+  jeonnam_mokpo: { name: '전남 · 목포', code: 11 },
+  daegu: { name: '대구', code: 12 },
+  gyeongbuk_pohang: { name: '경북 · 포항', code: 13 },
+  gyeongbuk_andong: { name: '경북 · 안동', code: 14 },
+  busan: { name: '부산', code: 15 },
+  ulsan: { name: '울산', code: 16 },
+  gyeongnam_changwon: { name: '경남 · 창원', code: 17 },
+  jeju: { name: '제주', code: 18 }
+};
+
+function getRegionInfo(regionKey) {
+  if (regionKey && Object.prototype.hasOwnProperty.call(BIRTH_REGIONS, regionKey)) {
+    return BIRTH_REGIONS[regionKey];
+  }
+  return BIRTH_REGIONS.seoul;
+}
+
+function getEffectiveBirthMinutes(year, month, day, timeConfig) {
+  if (timeConfig.mode === 'unknown') {
+    return toMinutes(year, month, day, 12, 0);
+  }
+  return toMinutes(year, month, day, timeConfig.hour, timeConfig.minute);
+}
+
+function minutesToDateParts(totalMin) {
+  const dayFloat = totalMin / 1440.0;
+  const dayIdx = Math.floor(dayFloat);
+  const remMin = ((totalMin % 1440) + 1440) % 1440;
+  const hh = Math.floor(remMin / 60);
+  const mm = remMin % 60;
+  const baseJd = julianDayFromUtc(1998, 2, 2, 0.0);
+  const diffDays = dayIdx - Math.round(baseJd);
+  const dt = new Date(Date.UTC(1998, 1, 2 + diffDays));
+  return {
+    year: dt.getUTCFullYear(),
+    month: dt.getUTCMonth() + 1,
+    day: dt.getUTCDate(),
+    hour: hh,
+    minute: mm
+  };
+}
+
+function getDayPillarFromMin(totalMin, yajasiMode = 'next_day') {
+  const parts = minutesToDateParts(totalMin);
+  let dayOffset = 0;
+  if (parts.hour === 23 && yajasiMode === 'next_cycle') {
+    dayOffset = 1;
+  }
+  const baseDate = Date.UTC(1998, 1, 2);
+  const targetDate = Date.UTC(parts.year, parts.month - 1, parts.day + dayOffset);
+  const diffDays = Math.round((targetDate - baseDate) / (1000 * 60 * 60 * 24));
+  const idx60 = ((28 + diffDays) % 60 + 60) % 60;
+  const stem = STEMS[idx60 % 10];
+  const branch = BRANCHES[idx60 % 12];
+  return { stem, branch, text: stem + branch, idx60, parts };
+}
+
+function getDayPillar(year, month, day) {
+  const baseDate = Date.UTC(1998, 1, 2);
+  const targetDate = Date.UTC(year, month - 1, day);
+  const diffDays = Math.round((targetDate - baseDate) / (1000 * 60 * 60 * 24));
+  const idx60 = ((28 + diffDays) % 60 + 60) % 60;
+  const stem = STEMS[idx60 % 10];
+  const branch = BRANCHES[idx60 % 12];
+  return { stem, branch, text: stem + branch, idx60 };
+}
+
+function getYearAndMonthPillar(year, month, day, birthMin) {
+  const ipchunCurr = getSolarTermKst(year, 0);
+  const adjYear = birthMin < toMinutes(...ipchunCurr) ? (year - 1) : year;
+  const yearIdx60 = ((adjYear - 1984) % 60 + 60) % 60;
+  const yStemIdx = yearIdx60 % 10;
+  const yBranchIdx = yearIdx60 % 12;
+
+  const majorTerms = [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22];
+  const candidates = [];
+  [-1, 0, 1].forEach(yOff => {
+    majorTerms.forEach(tIdx => {
+      const tup = getSolarTermKst(year + yOff, tIdx);
+      candidates.push({ min: toMinutes(...tup), termIdx: tIdx });
+    });
+  });
+  candidates.sort((a, b) => a.min - b.min);
+
+  let activeTerm = candidates[0].termIdx;
+  for (let i = 0; i < candidates.length; i++) {
+    if (candidates[i].min <= birthMin) activeTerm = candidates[i].termIdx;
+    else break;
+  }
+
+  const solarMonthOrder = Math.floor(activeTerm / 2) % 12;
+  const mBranchIdx = (solarMonthOrder + 2) % 12;
+  const startMonthStem = ((yStemIdx % 5) * 2 + 2) % 10;
+  const mStemIdx = (startMonthStem + solarMonthOrder) % 10;
+
+  return {
+    year: { stem: STEMS[yStemIdx], branch: BRANCHES[yBranchIdx], text: STEMS[yStemIdx] + BRANCHES[yBranchIdx] },
+    month: { stem: STEMS[mStemIdx], branch: BRANCHES[mBranchIdx], text: STEMS[mStemIdx] + BRANCHES[mBranchIdx] }
+  };
+}
+
+function getHourPillarFromMin(dayStem, totalMin, mode = 'exact') {
+  if (mode === 'unknown') {
+    return { stem: '?', branch: '?', text: '시간모름', isUnknown: true };
+  }
+  const parts = minutesToDateParts(totalMin);
+  const minsFrom2330 = ((parts.hour * 60 + parts.minute) - (23 * 60 + 30) + 1440) % 1440;
+  const bIdx = Math.floor(minsFrom2330 / 120) % 12;
+  const dStemIdx = STEMS.indexOf(dayStem);
+  const startHourStem = ((dStemIdx % 5) * 2) % 10;
+  const hStemIdx = (startHourStem + bIdx) % 10;
+  const stem = STEMS[hStemIdx];
+  const branch = BRANCHES[bIdx];
+  return { stem, branch, text: stem + branch, isUnknown: false };
+}
+
+function getHiddenWeightedList(branch) {
+  const list = BRANCH_HIDDEN_STEMS[branch] || [];
+  if (list.length === 1) return [{ stem: list[0], weight: 1.0 }];
+  if (list.length === 2) return [{ stem: list[0], weight: 0.35 }, { stem: list[1], weight: 0.65 }];
+  return [
+    { stem: list[0], weight: 0.2 },
+    { stem: list[1], weight: 0.3 },
+    { stem: list[2], weight: 0.5 }
+  ];
+}
+
+function analyzeDayStrength(userSaju) {
+  const dayStem = userSaju.day.stem;
+  const dayEl = STEM_INFO[dayStem].el;
+  const monthBranch = userSaju.month.branch;
+  const monthEl = BRANCH_ELEMENTS[monthBranch];
+
+  let supportScore = 0;
+  let drainScore = 0;
+
+  const mRel = getElementRelation(dayEl, monthEl);
+  if (mRel === '비겁' || mRel === '인성') supportScore += 3.2;
+  else drainScore += 2.6;
+
+  const otherStems = [userSaju.year.stem, userSaju.month.stem];
+  if (!userSaju.hour.isUnknown) otherStems.push(userSaju.hour.stem);
+  otherStems.forEach(st => {
+    const rel = getElementRelation(dayEl, STEM_INFO[st].el);
+    if (rel === '비겁' || rel === '인성') supportScore += 1.2;
+    else drainScore += 1.1;
+  });
+
+  const branches = [userSaju.year.branch, userSaju.month.branch, userSaju.day.branch];
+  if (!userSaju.hour.isUnknown) branches.push(userSaju.hour.branch);
+  branches.forEach(br => {
+    getHiddenWeightedList(br).forEach(item => {
+      const rel = getElementRelation(dayEl, STEM_INFO[item.stem].el);
+      if (rel === '비겁' || rel === '인성') supportScore += 1.3 * item.weight;
+      else drainScore += 1.15 * item.weight;
+    });
+  });
+
+  const diff = supportScore - drainScore;
+  if (diff >= 1.6) return { label: '신강', diff };
+  if (diff <= -1.6) return { label: '신약', diff };
+  return { label: '중화', diff };
+}
+
+function getKstTodayKey() {
+  const now = new Date();
+  const kstNow = new Date(now.getTime() + (9 * 60 + now.getTimezoneOffset()) * 60000);
+  const y = kstNow.getFullYear();
+  const m = kstNow.getMonth() + 1;
+  const d = kstNow.getDate();
+  return `${y}-${String(m).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+}
+
+function buildUpcomingDays(count = 14) {
+  const todayKey = getKstTodayKey();
+  const [baseYear, baseMonth1, baseDate] = todayKey.split('-').map(n => parseInt(n, 10));
+  const baseMonth = baseMonth1 - 1;
+
+  const days = [];
+  for (let i = 0; i < count; i++) {
+    const dt = new Date(Date.UTC(baseYear, baseMonth, baseDate + i));
+    const y = dt.getUTCFullYear();
+    const m = dt.getUTCMonth() + 1;
+    const d = dt.getUTCDate();
+    const w = WEEKDAYS_KO[dt.getUTCDay()];
+    const pillarObj = getDayPillar(y, m, d);
+
+    const isoDate = `${y}-${String(m).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+    const shortLabel = `${m}/${d} (${w})`;
+    const optionLabel = i === 0
+      ? `${y}년 ${m}월 ${d}일 (오늘 · ${pillarObj.text}일)`
+      : `${y}년 ${m}월 ${d}일 (${w} · ${pillarObj.text}일)`;
+
+    days.push({
+      date: isoDate,
+      label: shortLabel,
+      optionLabel,
+      pillar: pillarObj.text,
+      stem: pillarObj.stem,
+      branch: pillarObj.branch
+    });
+  }
+  return days;
+}
+
+let activeKstDateKey = getKstTodayKey();
+let UPCOMING_DAYS = buildUpcomingDays(14);
+let CALENDAR_DAYS = UPCOMING_DAYS.slice(0, 7);
+
+const targetDateSel = document.getElementById('target-date');
+
+function populateTargetDateOptions(preserveSelectedDate = null) {
+  const prevSelected = preserveSelectedDate || targetDateSel.value;
+  targetDateSel.innerHTML = '';
+  let matched = false;
+  UPCOMING_DAYS.forEach((dayItem, idx) => {
+    const isSel = prevSelected ? (dayItem.date === prevSelected) : (idx === 0);
+    if (isSel) matched = true;
+    const opt = new Option(dayItem.optionLabel, dayItem.date, idx === 0, isSel);
+    targetDateSel.add(opt);
+  });
+  if (!matched && UPCOMING_DAYS.length > 0) {
+    targetDateSel.value = UPCOMING_DAYS[0].date;
+  }
+
+  if (CALENDAR_DAYS.length > 0) {
+    const firstLabel = CALENDAR_DAYS[0].date.replace(/-/g, '.');
+    const lastLabel = CALENDAR_DAYS[CALENDAR_DAYS.length - 1].date.slice(5).replace('-', '.');
+    document.getElementById('calendar-range-label').textContent = `${firstLabel} ~ ${lastLabel}`;
+  }
+}
+
+populateTargetDateOptions();
+
+const ELEMENTS_CYCLE = ['목', '화', '토', '금', '수'];
+
+function getElementByRelation(dayEl, relationGroup) {
+  const idx = ELEMENTS_CYCLE.indexOf(dayEl);
+  const offsetMap = { '비겁': 0, '식상': 1, '재성': 2, '관성': 3, '인성': 4 };
+  const off = Object.prototype.hasOwnProperty.call(offsetMap, relationGroup) ? offsetMap[relationGroup] : 4;
+  return ELEMENTS_CYCLE[(idx + off) % 5];
+}
+
+function detectGyeokGuk(userSaju) {
+  const dayStem = userSaju.day.stem;
+  const dayEl = STEM_INFO[dayStem].el;
+  const mBranch = userSaju.month.branch;
+  const hList = BRANCH_HIDDEN_STEMS[mBranch] || [];
+  const mainStem = hList[hList.length - 1] || dayStem;
+  const mainGod = getTenGod(dayStem, mainStem);
+  const exposedStems = [userSaju.year.stem, userSaju.hour.isUnknown ? null : userSaju.hour.stem].filter(Boolean);
+  const exposedMatch = exposedStems.find(st => getTenGod(dayStem, st) === mainGod);
+  if (mainGod === '비견' || mainGod === '겁재') {
+    return {
+      name: exposedMatch ? `${mainGod} 건록/양인격` : '건록·비겁 성향',
+      favEl: getElementByRelation(dayEl, '식상')
+    };
+  }
+  const gyeokRelMap = {
+    '식신': { name: '식신격', rel: '재성' },
+    '상관': { name: '상관격', rel: '재성' },
+    '편재': { name: '편재격', rel: '관성' },
+    '정재': { name: '정재격', rel: '관성' },
+    '편관': { name: '편관격', rel: '인성' },
+    '정관': { name: '정관격', rel: '인성' },
+    '편인': { name: '편인격', rel: '재성' },
+    '정인': { name: '정인격', rel: '관성' }
+  };
+  const info = gyeokRelMap[mainGod] || { name: '조화격', rel: '인성' };
+  return {
+    name: exposedMatch ? `${info.name} 투간` : info.name,
+    favEl: getElementByRelation(dayEl, info.rel)
+  };
+}
+
+function analyzeJohuAndYongsin(userSaju, strength) {
+  const dayStem = userSaju.day.stem;
+  const dayEl = STEM_INFO[dayStem].el;
+  const mBranch = userSaju.month.branch;
+
+  // 조후(계절 한난조습): 인묘진(봄·온화), 사오미(여름·열기), 신유술(가을·건조), 해자축(겨울·한랭)
+  let johuNote = '계절 한난 균형';
+  let johuEl = null;
+  if (['해', '자', '축'].includes(mBranch)) {
+    johuNote = '겨울 한랭 조후 필요(화·목 온기)';
+    johuEl = '화';
+  } else if (['사', '오', '미'].includes(mBranch)) {
+    johuNote = '여름 열기 조후 필요(수·금 청량)';
+    johuEl = '수';
+  } else if (['신', '유', '술'].includes(mBranch)) {
+    johuNote = '가을 건조 조후 필요(수 윤택)';
+    johuEl = '수';
+  } else {
+    johuNote = '봄 목기 발산 조후(화·금 조율)';
+    johuEl = '화';
+  }
+
+  // 억부 + 조후 절충 용신 오행
+  let yongsinEl = johuEl || '수';
+  if (strength.label === '신강') {
+    const drainMap = { '목': '화', '화': '토', '토': '금', '금': '수', '수': '목' };
+    yongsinEl = drainMap[dayEl];
+  } else if (strength.label === '신약') {
+    const supportMap = { '목': '수', '화': '목', '토': '화', '금': '토', '수': '금' };
+    yongsinEl = johuEl && getElementRelation(dayEl, johuEl) === '인성' ? johuEl : supportMap[dayEl];
+  }
+
+  return { johuNote, johuEl, yongsinEl };
+}
+
+function getUnseContext(targetDateStr, userSaju) {
+  const parts = targetDateStr.split('-').map(n => parseInt(n, 10));
+  const ty = parts[0] || 2026;
+  const tm = parts[1] || 11;
+  const td = parts[2] || 22;
+  const tMin = toMinutes(ty, tm, td, 12, 0);
+  const ym = getYearAndMonthPillar(ty, tm, td, tMin);
+  const seunGod = getTenGod(userSaju.day.stem, ym.year.stem);
+  const wolunGod = getTenGod(userSaju.day.stem, ym.month.stem);
+  return {
+    yearPillar: ym.year.text,
+    monthPillar: ym.month.text,
+    seunGod,
+    wolunGod,
+    summary: `연운 ${ym.year.text}(${seunGod}) · 월운 ${ym.month.text}(${wolunGod})`
+  };
+}
+
+function evaluateGachaLuck(userSaju, targetDayObj) {
+  const dayStem = userSaju.day.stem;
+  const dayEl = STEM_INFO[dayStem].el;
+  const tStemEl = STEM_INFO[targetDayObj.stem].el;
+
+  const stemTenGod = getTenGod(dayStem, targetDayObj.stem);
+  const hiddenWeighted = getHiddenWeightedList(targetDayObj.branch);
+  const mainHiddenStem = hiddenWeighted[hiddenWeighted.length - 1].stem;
+  const branchMainTenGod = getTenGod(dayStem, mainHiddenStem);
+  const dayUnseong = getTwelveUnseong(dayStem, targetDayObj.branch);
+  const strength = analyzeDayStrength(userSaju);
+  const gyeokguk = detectGyeokGuk(userSaju);
+  const johuYongsin = analyzeJohuAndYongsin(userSaju, strength);
+  const unse = getUnseContext(targetDayObj.date, userSaju);
+
+  let score = 50;
+  const chips = [];
+
+  const sInfo = TEN_GOD_GUIDE[stemTenGod];
+  const stemFriendly = getTenGodFriendlyTitle(stemTenGod);
+  const branchFriendly = getTenGodFriendlyTitle(branchMainTenGod);
+  const strengthFriendly = getStrengthFriendlyTitle(strength.label);
+  const unseongFriendly = getUnseongFriendlyTitle(dayUnseong);
+  const personaTitle = `${getStemFriendlyTitle(dayStem)} · ${getBranchFriendlyTitle(userSaju.hour.branch)}`;
+
+  score += sInfo.delta;
+
+  const branchEl = BRANCH_ELEMENTS[targetDayObj.branch];
+  let favorableFlow = false;
+  if (tStemEl === johuYongsin.yongsinEl || branchEl === johuYongsin.yongsinEl) {
+    score += 7;
+    favorableFlow = true;
+  } else if (tStemEl === gyeokguk.favEl || branchEl === gyeokguk.favEl) {
+    score += 4;
+    favorableFlow = true;
+  }
+  if (['편재', '정재', '식신'].includes(unse.wolunGod)) {
+    score += 3;
+  } else if (['편관', '겁재'].includes(unse.wolunGod)) {
+    score -= 3;
+  }
+
+  let hiddenWeightedDelta = 0;
+  hiddenWeighted.forEach(hw => {
+    const tg = getTenGod(dayStem, hw.stem);
+    hiddenWeightedDelta += TEN_GOD_GUIDE[tg].delta * hw.weight;
+  });
+  score += Math.round(hiddenWeightedDelta * 0.85);
+
+  let energyPositive = false;
+  let energyCaution = false;
+  if (['장생', '건록', '제왕', '관대'].includes(dayUnseong)) {
+    score += 5;
+    energyPositive = true;
+  } else if (['절', '묘', '사'].includes(dayUnseong)) {
+    score -= 6;
+    energyCaution = true;
+  }
+
+  const tRel = getElementRelation(dayEl, tStemEl);
+  let boostPositive = false;
+  let boostCaution = false;
+  if (strength.label === '신약' && (tRel === '인성' || tRel === '비겁')) {
+    score += 7;
+    boostPositive = true;
+  } else if (strength.label === '신강' && (tRel === '식상' || tRel === '재성')) {
+    score += 7;
+    boostPositive = true;
+  } else if (strength.label === '신약' && tRel === '관성') {
+    score -= 10;
+    boostCaution = true;
+  } else if (strength.label === '신강' && (tRel === '인성' || tRel === '비겁')) {
+    score -= 6;
+    boostCaution = true;
+  }
+
+  const hasStemHarmony = isPairMatch(dayStem, targetDayObj.stem, STEM_HARMONY_PAIRS);
+  const hasBranchYukhap = isPairMatch(userSaju.day.branch, targetDayObj.branch, BRANCH_YUKHAP_PAIRS);
+  const hasBranchChung = isPairMatch(userSaju.day.branch, targetDayObj.branch, BRANCH_CHUNG_PAIRS);
+  const hasBranchHyung = isPairMatch(userSaju.day.branch, targetDayObj.branch, BRANCH_HYUNG_PAIRS);
+  const hasBranchPa = isPairMatch(userSaju.day.branch, targetDayObj.branch, BRANCH_PA_PAIRS);
+  const hasBranchHae = isPairMatch(userSaju.day.branch, targetDayObj.branch, BRANCH_HAE_PAIRS);
+
+  const sajuBranches = [userSaju.year.branch, userSaju.month.branch, userSaju.day.branch];
+  if (!userSaju.hour.isUnknown) sajuBranches.push(userSaju.hour.branch);
+  const samhapMatch = SAMHAP_GROUPS.find(grp => {
+    const matches = sajuBranches.filter(b => grp.branches.includes(b));
+    return grp.branches.includes(targetDayObj.branch) && matches.length >= 1;
+  });
+
+  let relationLabel = `오늘 궁합: ${stemFriendly}`;
+  let synergyPositive = false;
+  if (hasStemHarmony || hasBranchYukhap) {
+    score += 10;
+    relationLabel = '오늘 궁합: 착붙 순풍';
+    synergyPositive = true;
+  } else if (samhapMatch) {
+    score += 6;
+    relationLabel = '오늘 궁합: 시너지 호응';
+    synergyPositive = true;
+  }
+
+  let tempoCaution = false;
+  if (hasBranchChung) {
+    score -= 18;
+    relationLabel = '오늘 궁합: 변수·변동 주의';
+    tempoCaution = true;
+  } else if (hasBranchHyung) {
+    score -= 12;
+    relationLabel = '오늘 궁합: 마찰·조급 주의';
+    tempoCaution = true;
+  } else if (hasBranchPa || hasBranchHae) {
+    score -= 8;
+    relationLabel = '오늘 궁합: 흐름 흔들림 주의';
+    tempoCaution = true;
+  }
+
+  if (userSaju.day.text === targetDayObj.pillar) {
+    score += hasBranchChung ? -8 : 4;
+  }
+
+  // 일반인이 한눈에 파악할 수 있도록 3~4개 핵심 태그로 뭉뚱그림
+  const isPositiveTone = sInfo.delta >= 8 || favorableFlow || synergyPositive;
+  const isCautionTone = tempoCaution || boostCaution || energyCaution || sInfo.delta < -2;
+
+  if (isPositiveTone && !isCautionTone) {
+    chips.push({ label: '순조로운 뽑기 흐름', tone: 'emerald' });
+  } else if (isPositiveTone && isCautionTone) {
+    chips.push({ label: '기회는 있으나 템포 조절', tone: 'amber' });
+  } else if (isCautionTone) {
+    chips.push({ label: '무리한 연타 자제', tone: 'rose' });
+  } else {
+    chips.push({ label: '무난한 관망·소액 추천', tone: 'purple' });
+  }
+
+  if (energyCaution && !boostPositive && !favorableFlow) {
+    chips.push({ label: '차분한 페이스로 진행', tone: 'purple' });
+  }
+
+  if (tempoCaution || ['겁재', '편관', '상관'].includes(stemTenGod)) {
+    chips.push({ label: '한 번만 더 심리 주의', tone: 'rose' });
+  } else {
+    chips.push({ label: '목표 횟수 설정 유리', tone: 'amber' });
+  }
+
+  const norm = Math.max(0, Math.min(1, (score - 18) / (82 - 18)));
+  score = Math.max(1, Math.min(10, Math.round(1 + norm * 9)));
+
+  let grade = 'C';
+  let gradeTitle = '보통';
+  let gradeColorClass = 'text-sky-300';
+  let badgeClass = 'bg-sky-500/20 border-sky-400 text-sky-300';
+  let riskText = '● 픽뚫 위험도: 보통 (흐름 확인 후 진행)';
+  let riskColor = 'text-amber-300';
+
+  if (score === 10) {
+    grade = 'S';
+    gradeTitle = '대박 길일';
+    gradeColorClass = 'text-amber-300';
+    badgeClass = 'bg-amber-500/25 border-amber-400 text-amber-300';
+    riskText = '● 픽뚫 위험도: 최저 (초대박·조기당첨 기대)';
+    riskColor = 'text-emerald-400';
+  } else if (score >= 8) {
+    grade = 'A';
+    gradeTitle = '매우 좋음';
+    gradeColorClass = 'text-emerald-300';
+    badgeClass = 'bg-emerald-500/20 border-emerald-400 text-emerald-300';
+    riskText = '● 픽뚫 위험도: 낮음 (유리한 흐름)';
+    riskColor = 'text-emerald-400';
+  } else if (score >= 6) {
+    grade = 'B';
+    gradeTitle = '무난함';
+    gradeColorClass = 'text-purple-300';
+    badgeClass = 'bg-purple-500/20 border-purple-400 text-purple-300';
+    riskText = '● 픽뚫 위험도: 보통~낮음 (무난한 흐름)';
+    riskColor = 'text-emerald-300';
+  } else if (score >= 4) {
+    grade = 'C';
+    gradeTitle = '보통';
+    gradeColorClass = 'text-sky-300';
+    badgeClass = 'bg-sky-500/20 border-sky-400 text-sky-300';
+    riskText = '● 픽뚫 위험도: 보통 (흐름 확인 후 진행)';
+    riskColor = 'text-amber-300';
+  } else if (score >= 2) {
+    grade = 'D';
+    gradeTitle = '주의';
+    gradeColorClass = 'text-orange-300';
+    badgeClass = 'bg-orange-500/20 border-orange-400 text-orange-300';
+    riskText = '● 픽뚫 위험도: 높음 (재화 아끼기 권장)';
+    riskColor = 'text-orange-400';
+  } else {
+    grade = 'F';
+    gradeTitle = '비추·위험';
+    gradeColorClass = 'text-rose-400';
+    badgeClass = 'bg-rose-500/20 border-rose-400 text-rose-300';
+    riskText = '● 픽뚫 위험도: 매우 높음 (천장·손실 주의)';
+    riskColor = 'text-rose-400';
+  }
+
+  const bestTimeMap = {
+    '수': { time: '11:30 ~ 13:30 (병오시)', desc: '수(水) 일간 기준 화(火) 기운이 선명한 시간대' },
+    '목': { time: '13:30 ~ 15:30 (정미시)', desc: '목(木) 일간 기준 식상·재성 흐름이 이어지는 시간대' },
+    '화': { time: '15:30 ~ 17:30 (무신시)', desc: '화(火) 일간 기준 토·금 기운이 모이는 시간대' },
+    '토': { time: '21:30 ~ 23:30 (해시)', desc: '토(土) 일간 기준 수(水) 기운이 차분한 시간대' },
+    '금': { time: '07:30 ~ 09:30 (진시)', desc: '금(金) 일간 기준 목·토 기운이 살아나는 시간대' }
+  };
+  const timing = bestTimeMap[dayEl];
+  const guide = ELEMENT_GUIDE[dayEl];
+
+  const cautionText = hasBranchChung
+    ? `오늘은 <strong>기운 변동폭이 큰 날</strong>이니 무리한 연타나 계획 외 추가 지출을 피하세요.`
+    : (hasBranchHyung || hasBranchPa || hasBranchHae)
+      ? `오늘은 <strong>템포가 흔들릴 수 있는 날</strong>이니 감정적인 "한 번만 더" 추격 뽑기를 주의하세요.`
+      : (stemTenGod === '겁재' || stemTenGod === '편관' || stemTenGod === '상관')
+        ? `<strong>${stemFriendly}</strong> 흐름이 과열·변수를 부를 수 있으니 미리 정한 예산 한도를 넘기지 마세요.`
+        : `좋은 흐름일수록 <strong>목표 달성 시 즉시 멈추고</strong> 여분 재화를 남기는 절제가 필요합니다.`;
+
+  const lines = [];
+  if (grade === 'S') {
+    lines.push(`👑 <strong>[S등급 · 대박 길일]</strong> <strong>${personaTitle}(${strengthFriendly})</strong> 타입에 <strong>${stemFriendly}</strong>와 <strong>${unseongFriendly}</strong> 리듬이 맞물리는 최상위 길일입니다.`);
+    lines.push(`🎯 <strong>[목표 상한선]</strong> 가장 흐름이 좋은 날일수록 목표 픽업·돌파 단계를 미리 정해 두고 흔들리지 마세요.`);
+    lines.push(`⚡ <strong>[피크 타임]</strong> <strong>${timing.time.split(' ')[0]}</strong> 시간대를 최우선으로 노려보세요.`);
+    lines.push(`⚠️ <strong>[주의할 점]</strong> ${cautionText}`);
+  } else if (score >= 8) {
+    lines.push(`🔥 <strong>[A등급 · 긍정 흐름]</strong> <strong>${personaTitle}(${strengthFriendly})</strong> 타입 기준 <strong>${stemFriendly}</strong> 및 <strong>${unseongFriendly}</strong> 흐름이 유리하게 작용합니다.`);
+    lines.push(`🎯 <strong>[횟수 조절]</strong> 좋은 흐름일수록 무제한 연타 대신 목표 횟수·예산을 먼저 정해 두세요.`);
+    lines.push(`⚡ <strong>[추천 시간]</strong> <strong>${timing.time.split(' ')[0]}</strong> 전후로 가볍게 시도해 보시기 좋습니다.`);
+    lines.push(`⚠️ <strong>[주의할 점]</strong> ${cautionText}`);
+  } else if (score >= 6) {
+    lines.push(`✨ <strong>[${grade}등급 · 무난한 흐름]</strong> <strong>${personaTitle}(${strengthFriendly})</strong> 타입에 <strong>${stemFriendly}</strong> 흐름이 들어와 무난히 진행할 수 있는 날입니다.`);
+    lines.push(`🎲 <strong>[목표 설정]</strong> 중복 돌파 욕심보다 원하는 핵심 보상·명함 선에서 끊는 편이 유리합니다.`);
+    lines.push(`🧭 <strong>[개운 팁]</strong> <strong>${timing.time.split(' ')[0]}</strong> 사이에 차분히 진행해 보세요.`);
+    lines.push(`⚠️ <strong>[주의할 점]</strong> ${cautionText}`);
+  } else {
+    lines.push(`🌊 <strong>[${grade}등급 · 재화 방어]</strong> <strong>${personaTitle}(${strengthFriendly})</strong> 타입 기준 오늘은 <strong>${stemFriendly}</strong> 흐름이라 조급한 지출 시 손실 체감이 커질 수 있습니다.`);
+    lines.push(`🛡️ <strong>[관망 추천]</strong> 꼭 오늘 뽑아야 하는 픽업이 아니라면 재화를 아껴두고 다른 길일을 노려보세요.`);
+    lines.push(`📅 <strong>[일정 비교]</strong> <strong>[3. 주간 황금일]</strong> 탭에서 이번 주 등급이 높은 날을 먼저 확인해 보세요.`);
+    lines.push(`⚠️ <strong>[주의할 점]</strong> ${cautionText}`);
+  }
+
+  const pullStyle = grade === 'S'
+    ? '최상위 길일이므로 사전에 정한 예산 한도 내에서 <strong>10연차 중심</strong>으로 과감하되 깔끔하게 승부하는 전략이 어울립니다.'
+    : (score >= 8
+      ? '흐름이 열려 있으므로 미리 정한 예산 안에서 <strong>10연차 단위</strong>로 깔끔하게 진행하는 편이 유리합니다.'
+      : '처음부터 크게 지르기보다 <strong>단차 몇 회로 분위기</strong>를 가볍게 본 뒤, 무리하지 않는 선에서 멈추는 것을 권장합니다.');
+
+  const warning = grade === 'S'
+    ? '조기당첨이 뜨더라도 <strong>"S등급이니까 천장 한 번 더 도전?"</strong> 하는 순간 과지출이 생길 수 있습니다. <strong>목표에 닿았을 때 기분 좋게 마무리해 보세요.</strong>'
+    : (score >= 8
+      ? '원하는 결과가 일찍 나왔을 때 <strong>"흐름 좋으니 한 번만 더?"</strong> 하며 이어가다 보면 본전 생각이 날 수 있습니다. <strong>목표 달성 시 즉시 종료하세요.</strong>'
+      : '안 나온다고 <strong>"아깝다, 한 번만 더"</strong> 하며 예산을 넘기는 순간이 가장 위험합니다. 미리 정해둔 한도 안에서 여유 있게 즐겨 보세요.');
+
+  return {
+    score,
+    grade,
+    gradeTitle,
+    gradeColorClass,
+    badgeClass,
+    riskText,
+    riskColor,
+    relationLabel,
+    personaTitle,
+    strengthFriendly,
+    stemFriendly,
+    branchFriendly,
+    unseongFriendly,
+    strength,
+    gyeokguk,
+    johuYongsin,
+    unse,
+    dayUnseong,
+    stemTenGod,
+    branchMainTenGod,
+    tenGodNote: sInfo.note,
+    chips,
+    timing,
+    guide,
+    lines,
+    pullStyle,
+    warning
+  };
+}
+
+const yearSel = document.getElementById('birth-year');
+const monthSel = document.getElementById('birth-month');
+const daySel = document.getElementById('birth-day');
+const hourSel = document.getElementById('birth-hour');
+const minuteSel = document.getElementById('birth-minute');
+const timeModeSel = document.getElementById('birth-time-mode');
+const exactTimeRow = document.getElementById('exact-time-row');
+const yajasiRow = document.getElementById('yajasi-row');
+
+const currentKstYear = new Date(Date.now() + 9 * 3600000).getUTCFullYear();
+for (let y = currentKstYear; y >= 1900; y--) {
+  yearSel.add(new Option(`${y}년`, y, y === 2000, y === 2000));
+}
+for (let m = 1; m <= 12; m++) {
+  monthSel.add(new Option(`${m}월`, m, m === 1, m === 1));
+}
+for (let h = 0; h < 24; h++) {
+  hourSel.add(new Option(`${String(h).padStart(2, '0')}시`, h, h === 12, h === 12));
+}
+for (let min = 0; min < 60; min++) {
+  minuteSel.add(new Option(`${String(min).padStart(2, '0')}분`, min, min === 0, min === 0));
+}
+
+function syncBirthDays(selectedDayValue = null) {
+  const y = parseInt(yearSel.value, 10);
+  const m = parseInt(monthSel.value, 10);
+  const maxDays = new Date(Date.UTC(y, m, 0)).getUTCDate();
+  const prevDay = selectedDayValue !== null ? parseInt(selectedDayValue, 10) : parseInt(daySel.value || '1', 10);
+
+  daySel.innerHTML = '';
+  for (let d = 1; d <= maxDays; d++) {
+    const isSel = d === Math.min(prevDay, maxDays);
+    daySel.add(new Option(`${d}일`, d, isSel, isSel));
+  }
+}
+
+function syncTimeInputs() {
+  const isUnknown = timeModeSel.value === 'unknown';
+  exactTimeRow.classList.toggle('hidden', isUnknown);
+  const hVal = parseInt(hourSel.value, 10);
+  yajasiRow.classList.toggle('hidden', isUnknown || hVal !== 23);
+}
+
+const regionSel = document.getElementById('birth-region');
+
+syncBirthDays(1);
+syncTimeInputs();
+yearSel.addEventListener('change', () => { syncBirthDays(); });
+monthSel.addEventListener('change', () => { syncBirthDays(); });
+timeModeSel.addEventListener('change', () => { syncTimeInputs(); });
+hourSel.addEventListener('change', () => { syncTimeInputs(); });
+
+let toastTimer = null;
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  document.getElementById('toast-msg').textContent = msg;
+  toast.classList.remove('opacity-0', 'translate-y-3');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => {
+    toast.classList.add('opacity-0', 'translate-y-3');
+  }, 2400);
+}
+
+function clearLegacyResultCaches() {
+  try {
+    [
+      'gacha_saju_cache_v6',
+      'gacha_saju_cache_v10',
+      'gacha_saju_cache_v11',
+      'gacha_saju_cache_v12',
+      'gacha_saju_cache_v18',
+      'gacha_saju_cache_v19'
+    ].forEach(k => localStorage.removeItem(k));
+  } catch (err) {}
+}
+
+clearLegacyResultCaches();
+let latestShareText = '';
+let latestRenderedPayload = null;
+let loadingStepTimerId = null;
+let loadingFinishTimerId = null;
+let pendingResultPayload = null;
+
+function clearLoadingTimers() {
+  if (loadingStepTimerId) {
+    clearTimeout(loadingStepTimerId);
+    loadingStepTimerId = null;
+  }
+  if (loadingFinishTimerId) {
+    clearTimeout(loadingFinishTimerId);
+    loadingFinishTimerId = null;
+  }
+}
+
+function isValidPayload(v) {
+  return Boolean(
+    v &&
+    v.userSaju && v.userSaju.day && v.userSaju.day.stem &&
+    v.targetDayObj && v.targetDayObj.date &&
+    v.luck && typeof v.luck.grade === 'string' &&
+    typeof v.luck.gradeTitle === 'string' &&
+    Array.isArray(v.luck.lines) && v.luck.lines.length >= 4 &&
+    Array.isArray(v.weekCalendar) && v.weekCalendar.length > 0
+  );
+}
+
+function computeCurrentSajuPayload() {
+  const y = parseInt(yearSel.value, 10) || 2000;
+  const m = parseInt(monthSel.value, 10) || 1;
+  const d = parseInt(daySel.value, 10) || 1;
+  const mode = timeModeSel.value || 'exact';
+  const hh = parseInt(hourSel.value, 10) || 0;
+  const mm = parseInt(minuteSel.value, 10) || 0;
+  const regionInfo = getRegionInfo(document.getElementById('birth-region')?.value);
+  const yajasiMode = document.getElementById('yajasi-mode')?.value || 'next_day';
+  const targetDateStr = targetDateSel.value || (UPCOMING_DAYS[0] && UPCOMING_DAYS[0].date) || '2026-11-22';
+
+  const timeConfig = { mode, hour: hh, minute: mm, region: regionInfo.name };
+  const effectiveMin = getEffectiveBirthMinutes(y, m, d, timeConfig);
+  const ym = getYearAndMonthPillar(y, m, d, effectiveMin);
+  const dayP = mode === 'unknown' ? getDayPillar(y, m, d) : getDayPillarFromMin(effectiveMin, yajasiMode);
+  const hourP = getHourPillarFromMin(dayP.stem, effectiveMin, mode);
+  const userSaju = { year: ym.year, month: ym.month, day: dayP, hour: hourP, region: regionInfo.name };
+
+
+  const targetDayObj = UPCOMING_DAYS.find(item => item.date === targetDateStr) || UPCOMING_DAYS[0];
+  const luck = evaluateGachaLuck(userSaju, targetDayObj);
+
+  const weekCalendar = CALENDAR_DAYS.map(dayItem => ({
+    ...dayItem,
+    eval: evaluateGachaLuck(userSaju, dayItem)
+  }));
+
+  const computedData = { userSaju, targetDayObj, luck, weekCalendar };
+  return { computedData, isCached: false };
+}
+
+function finishLoadingAndShowResult() {
+  clearLoadingTimers();
+  let payload = pendingResultPayload;
+  pendingResultPayload = null;
+
+  if (!payload || !isValidPayload(payload.computedData)) {
+    payload = computeCurrentSajuPayload();
+  }
+
+  const { computedData, isCached } = payload;
+  latestRenderedPayload = computedData;
+
+  renderResult(computedData, isCached);
+  document.getElementById('loading-section').classList.add('hidden');
+  document.getElementById('result-section').classList.remove('hidden');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+document.getElementById('saju-form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  clearLoadingTimers();
+  syncIfDateChanged(false);
+
+  const { computedData, isCached } = computeCurrentSajuPayload();
+  pendingResultPayload = { computedData, isCached };
+
+  document.getElementById('input-section').classList.add('hidden');
+  document.getElementById('result-section').classList.add('hidden');
+  const loadingSec = document.getElementById('loading-section');
+  const loadingBar = document.getElementById('loading-bar');
+  const loadingStatus = document.getElementById('loading-status');
+  loadingSec.classList.remove('hidden');
+
+  loadingBar.style.width = '25%';
+  loadingStatus.textContent = isCached
+    ? '오늘의 가챠운 결과를 준비하는 중...'
+    : '태어난 날과 오늘의 기운을 살피는 중...';
+
+  loadingStepTimerId = setTimeout(() => {
+    if (!pendingResultPayload) return;
+    loadingBar.style.width = '60%';
+    loadingStatus.textContent = '오늘의 행운 기운과 유리한 흐름을 따져보는 중...';
+    loadingStepTimerId = setTimeout(() => {
+      loadingStepTimerId = null;
+      if (pendingResultPayload) {
+        loadingBar.style.width = '90%';
+        loadingStatus.textContent = '오늘의 뽑기 등급과 좋은 시간대를 정리하는 중...';
+      }
+    }, 1800);
+  }, 1200);
+
+  loadingFinishTimerId = setTimeout(() => {
+    loadingFinishTimerId = null;
+    finishLoadingAndShowResult();
+  }, 4000);
+});
+
+function getChipClass(tone) {
+  if (tone === 'amber') return 'bg-amber-500/15 border-amber-500/35 text-amber-200';
+  if (tone === 'purple') return 'bg-purple-500/15 border-purple-500/35 text-purple-200';
+  if (tone === 'emerald') return 'bg-emerald-500/15 border-emerald-500/35 text-emerald-200';
+  if (tone === 'rose') return 'bg-rose-500/15 border-rose-500/35 text-rose-200';
+  return 'bg-gray-800 border-gray-700 text-gray-300';
+}
+
+
+function renderResult(data, isCached) {
+  const { userSaju, targetDayObj, luck, weekCalendar } = data;
+  const dayStem = userSaju.day.stem;
+
+  document.getElementById('res-date-label').textContent = `${targetDayObj.date.replace(/-/g, '.')} 기준`;
+  document.getElementById('res-user-title').textContent = luck.personaTitle || '균형 성향형';
+
+  const gradeBadge = document.getElementById('res-grade-badge');
+  gradeBadge.textContent = luck.grade;
+  gradeBadge.className = `px-3 py-1.5 rounded-2xl border font-black text-xs sm:text-sm tracking-wider shrink-0 ${luck.badgeClass}`;
+
+  const scoreEl = document.getElementById('res-score');
+  scoreEl.textContent = luck.grade;
+  scoreEl.className = `text-5xl sm:text-6xl font-black tracking-tight ${luck.gradeColorClass || 'text-amber-400'}`;
+  document.getElementById('res-grade-sub').textContent = luck.gradeTitle || '';
+  const riskEl = document.getElementById('res-pick-risk');
+  riskEl.textContent = luck.riskText;
+  riskEl.className = `text-[11px] sm:text-xs font-semibold mt-1.5 ${luck.riskColor}`;
+
+  document.getElementById('res-best-time').textContent = luck.timing.time.split(' ')[0];
+  document.getElementById('res-interaction-badge').textContent = luck.relationLabel;
+  const chipsWrap = document.getElementById('factor-chips');
+  chipsWrap.innerHTML = luck.chips
+    .map(c => `<span class="text-[11px] px-2.5 py-1 rounded-full border font-medium ${getChipClass(c.tone)}"># ${c.label}</span>`)
+    .join('');
+
+  const summaryList = document.getElementById('res-summary-list');
+  summaryList.innerHTML = luck.lines
+    .map(line => `<li class="bg-cardbg/70 p-2.5 rounded-xl border border-gray-800/80">${line}</li>`)
+    .join('');
+
+  document.getElementById('ritual-ten-gods').textContent = `${luck.stemFriendly} · ${luck.unseongFriendly}`;
+  document.getElementById('ritual-ten-god-note').textContent = luck.tenGodNote;
+  document.getElementById('ritual-time').textContent = luck.timing.time;
+  document.getElementById('ritual-time-desc').textContent = luck.timing.desc;
+  document.getElementById('ritual-dir').textContent = luck.guide.dir;
+  document.getElementById('ritual-color').textContent = `행운 컬러: ${luck.guide.color}`;
+  document.getElementById('ritual-pull-style').innerHTML = luck.pullStyle;
+  document.getElementById('ritual-warning').innerHTML = luck.warning;
+
+  const calList = document.getElementById('calendar-list');
+  calList.innerHTML = weekCalendar.map(item => {
+    const g = item.eval.grade;
+    const isS = g === 'S';
+    const isA = g === 'A';
+    const rowStyle = isS
+      ? 'border-amber-500/70 bg-amber-500/15'
+      : (isA ? 'border-emerald-500/45 bg-emerald-500/10' : 'border-gray-800 bg-obsidian/80');
+    const scoreColor = isS ? 'text-amber-300' : (isA ? 'text-emerald-300' : (g === 'B' ? 'text-purple-300' : 'text-gray-400'));
+
+    return `
+      <div class="flex items-center justify-between gap-2 p-3 rounded-2xl border ${rowStyle}">
+        <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
+          <div class="text-center min-w-[64px] shrink-0">
+            <span class="text-xs font-bold text-white block">${item.label}</span>
+            <span class="text-[11px] text-gray-400">${item.pillar}일</span>
+          </div>
+          <div class="min-w-0">
+            <span class="text-xs font-bold ${scoreColor} block truncate">${item.eval.gradeTitle} ${isS ? '🔥 대박 길일' : (isA ? '✨ 추천' : '')}</span>
+            <span class="text-[11px] text-gray-400 block truncate">${item.eval.stemTenGod} · ${item.eval.dayUnseong} · ${item.eval.timing.time.split(' ')[0]}</span>
+          </div>
+        </div>
+        <div class="text-right shrink-0">
+          <span class="text-xl sm:text-2xl font-black ${scoreColor}">${g}</span>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  const plainLines = luck.lines.map(l => l.replace(/<[^>]+>/g, '')).join('\n');
+  latestShareText = [
+    `🔮 [가챠 사주운세] 오늘의 가챠운 결과`,
+    `• 나의 성향: ${luck.personaTitle} (${luck.strengthFriendly})`,
+    `• 점괘일: ${targetDayObj.date} (${luck.stemFriendly})`,
+    `• 비틱 등급: ${luck.grade}등급 (${luck.gradeTitle})`,
+    `• 황금 시간대: ${luck.timing.time.split(' ')[0]}`,
+    `--------------------`,
+    plainLines
+  ].join('\n');
+
+  switchTab('tab-summary');
+}
+
+
+
+function generateCardPngDataUrl(data) {
+  const { userSaju, targetDayObj, luck } = data;
+  const dayStem = userSaju.day.stem;
+
+  function drawRoundedRect(ctx, x, y, w, h, r) {
+    const radius = Math.max(0, Math.min(r, w / 2, h / 2));
+    ctx.beginPath();
+    ctx.moveTo(x + radius, y);
+    ctx.arcTo(x + w, y, x + w, y + h, radius);
+    ctx.arcTo(x + w, y + h, x, y + h, radius);
+    ctx.arcTo(x, y + h, x, y, radius);
+    ctx.arcTo(x, y, x + w, y, radius);
+    ctx.closePath();
+  }
+
+  function wrapByWidth(ctx, text, maxWidth) {
+    const clean = String(text || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+    if (!clean) return [];
+    const lines = [];
+    let current = '';
+    for (const ch of clean) {
+      const test = current + ch;
+      if (ctx.measureText(test).width <= maxWidth || current.length === 0) {
+        current = test;
+      } else {
+        lines.push(current.trim());
+        current = ch;
+      }
+    }
+    if (current.trim()) lines.push(current.trim());
+    return lines;
+  }
+
+  const width = 840;
+  const padX = 44;
+  const innerW = width - padX * 2;
+  const textMaxW = innerW - 72;
+
+  const measureCanvas = document.createElement('canvas');
+  const mCtx = measureCanvas.getContext('2d');
+
+  // Pre-calculate factor chips layout
+  const chipGapX = 8;
+  const chipGapY = 8;
+  const chipH = 28;
+  const chipItems = [];
+  let curChipX = 0;
+  let curChipY = 0;
+  mCtx.font = '600 13px "Noto Sans KR", "Inter", sans-serif';
+  luck.chips.forEach(ch => {
+    const label = `# ${ch.label}`;
+    const cw = Math.ceil(mCtx.measureText(label).width) + 22;
+    if (curChipX > 0 && curChipX + cw > innerW) {
+      curChipX = 0;
+      curChipY += chipH + chipGapY;
+    }
+    chipItems.push({ label, x: curChipX, y: curChipY, w: cw, h: chipH, tone: ch.tone });
+    curChipX += cw + chipGapX;
+  });
+  const chipsTotalH = chipItems.length > 0 ? (curChipY + chipH) : 0;
+
+  // Pre-calculate summary box exact height from content
+  mCtx.font = '500 15.5px "Noto Sans KR", "Inter", sans-serif';
+  const lineHeight = 23;
+  const summaryRows = luck.lines.map((rawLine, idx) => {
+    const wrapped = wrapByWidth(mCtx, rawLine, textMaxW);
+    const rowH = wrapped.length * lineHeight + 18;
+    return { wrapped, rowH, isLast: idx === luck.lines.length - 1 };
+  });
+  const rowsGap = 10;
+  const summaryRowsH = summaryRows.reduce((acc, r, i) => acc + r.rowH + (i < summaryRows.length - 1 ? rowsGap : 0), 0);
+  const sumBoxHeaderH = 44;
+  const sumBoxPadBottom = 18;
+  const sumBoxH = sumBoxHeaderH + summaryRowsH + sumBoxPadBottom;
+
+  // Calculate exact card height without the removed persona card grid
+  const topPad = 40;
+  const headerH = 62;
+  const mainBoxY = topPad + headerH + 14;
+  const mainBoxH = 178;
+  const chipsStartY = mainBoxY + mainBoxH + 20;
+  const sumBoxY = chipsStartY + (chipsTotalH > 0 ? chipsTotalH + 18 : 6);
+  const footerY = sumBoxY + sumBoxH + 22;
+  const height = footerY + 22;
+
+  const canvas = document.createElement('canvas');
+  canvas.width = width;
+  canvas.height = height;
+  const ctx = canvas.getContext('2d');
+
+  // Background gradient matching #viral-card
+  const bgGrad = ctx.createLinearGradient(0, 0, 0, height);
+  bgGrad.addColorStop(0, '#171C2C');
+  bgGrad.addColorStop(1, '#0E111B');
+  drawRoundedRect(ctx, 8, 8, width - 16, height - 16, 36);
+  ctx.fillStyle = bgGrad;
+  ctx.fill();
+  ctx.lineWidth = 3;
+  ctx.strokeStyle = 'rgba(245, 158, 11, 0.55)';
+  ctx.stroke();
+
+  // Header
+  ctx.fillStyle = '#FBBF24';
+  ctx.font = '700 17px "Noto Sans KR", "Inter", sans-serif';
+  ctx.fillText(`${targetDayObj.date.replace(/-/g, '.')} 기준`, padX, topPad + 18);
+
+  ctx.fillStyle = '#FFFFFF';
+  ctx.font = '900 26px "Noto Sans KR", "Inter", sans-serif';
+  ctx.fillText(luck.personaTitle || '균형 성향형', padX, topPad + 54);
+
+  // Top-right grade pill
+  const gradePillW = 104;
+  const gradePillH = 44;
+  const gradePillX = width - padX - gradePillW;
+  const gradePillY = topPad + 4;
+  drawRoundedRect(ctx, gradePillX, gradePillY, gradePillW, gradePillH, 16);
+  ctx.fillStyle = 'rgba(245, 158, 11, 0.2)';
+  ctx.fill();
+  ctx.lineWidth = 2;
+  ctx.strokeStyle = '#FBBF24';
+  ctx.stroke();
+
+  ctx.fillStyle = '#FDE68A';
+  ctx.font = '900 22px "Noto Sans KR", "Inter", sans-serif';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText(luck.grade, gradePillX + gradePillW / 2, gradePillY + gradePillH / 2 + 1);
+  ctx.textAlign = 'left';
+  ctx.textBaseline = 'alphabetic';
+
+  // Main Grade Box
+  drawRoundedRect(ctx, padX, mainBoxY, innerW, mainBoxH, 24);
+  ctx.fillStyle = 'rgba(11, 13, 20, 0.85)';
+  ctx.fill();
+  ctx.lineWidth = 1.5;
+  ctx.strokeStyle = '#23293A';
+  ctx.stroke();
+
+  ctx.fillStyle = '#9CA3AF';
+  ctx.font = '500 15.5px "Noto Sans KR", "Inter", sans-serif';
+  ctx.fillText('오늘의 비틱(조기당첨) 등급', padX + 26, mainBoxY + 36);
+
+  const gradeColorMap = {
+    'S': '#FCD34D',
+    'A': '#6EE7B7',
+    'B': '#D8B4FE',
+    'C': '#7DD3FC',
+    'D': '#FDBA74',
+    'F': '#FB7185'
+  };
+  ctx.fillStyle = gradeColorMap[luck.grade] || '#FBBF24';
+  ctx.font = '900 66px "Noto Sans KR", "Inter", sans-serif';
+  ctx.fillText(luck.grade, padX + 26, mainBoxY + 108);
+
+  const gradeWidth = ctx.measureText(luck.grade).width;
+  ctx.fillStyle = '#D1D5DB';
+  ctx.font = '700 20px "Noto Sans KR", "Inter", sans-serif';
+  ctx.fillText(luck.gradeTitle || '', padX + 38 + gradeWidth, mainBoxY + 95);
+
+  ctx.fillStyle = luck.grade === 'S' || luck.grade === 'A' ? '#34D399' : '#FBBF24';
+  ctx.font = '700 15.5px "Noto Sans KR", "Inter", sans-serif';
+  ctx.fillText(luck.riskText || '', padX + 26, mainBoxY + 148);
+
+  // Right golden time & interaction badge
+  const timeCardW = 246;
+  const timeCardH = 72;
+  const timeCardX = padX + innerW - 24 - timeCardW;
+  const timeCardY = mainBoxY + 26;
+  drawRoundedRect(ctx, timeCardX, timeCardY, timeCardW, timeCardH, 16);
+  ctx.fillStyle = 'rgba(139, 92, 246, 0.16)';
+  ctx.fill();
+  ctx.lineWidth = 1.5;
+  ctx.strokeStyle = 'rgba(139, 92, 246, 0.35)';
+  ctx.stroke();
+
+  ctx.fillStyle = '#C4B5FD';
+  ctx.font = '600 13px "Noto Sans KR", "Inter", sans-serif';
+  ctx.textAlign = 'right';
+  ctx.fillText('황금 시간대', timeCardX + timeCardW - 16, timeCardY + 25);
+
+  ctx.fillStyle = '#FFFFFF';
+  ctx.font = '800 20px "Noto Sans KR", "Inter", sans-serif';
+  ctx.fillText(luck.timing.time.split(' ')[0], timeCardX + timeCardW - 16, timeCardY + 54);
+
+  drawRoundedRect(ctx, timeCardX, mainBoxY + 112, timeCardW, 38, 19);
+  ctx.fillStyle = 'rgba(245, 158, 11, 0.15)';
+  ctx.fill();
+  ctx.lineWidth = 1.5;
+  ctx.strokeStyle = 'rgba(245, 158, 11, 0.35)';
+  ctx.stroke();
+
+  ctx.fillStyle = '#FCD34D';
+  ctx.font = '700 14px "Noto Sans KR", "Inter", sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText(luck.relationLabel, timeCardX + timeCardW / 2, mainBoxY + 136);
+  ctx.textAlign = 'left';
+
+  // Factor chips (match DOM tone palette)
+  const pngChipToneMap = {
+    amber: { fill: 'rgba(245, 158, 11, 0.15)', stroke: 'rgba(245, 158, 11, 0.35)', text: '#FDE68A' },
+    purple: { fill: 'rgba(139, 92, 246, 0.15)', stroke: 'rgba(139, 92, 246, 0.35)', text: '#DDD6FE' },
+    emerald: { fill: 'rgba(16, 185, 129, 0.15)', stroke: 'rgba(16, 185, 129, 0.35)', text: '#A7F3D0' },
+    rose: { fill: 'rgba(244, 63, 94, 0.15)', stroke: 'rgba(244, 63, 94, 0.35)', text: '#FECDD3' }
+  };
+  ctx.font = '600 13px "Noto Sans KR", "Inter", sans-serif';
+  chipItems.forEach(ch => {
+    const x = padX + ch.x;
+    const y = chipsStartY + ch.y;
+    const palette = pngChipToneMap[ch.tone] || { fill: 'rgba(31, 41, 55, 0.85)', stroke: 'rgba(75, 85, 99, 0.6)', text: '#D1D5DB' };
+    drawRoundedRect(ctx, x, y, ch.w, ch.h, 13);
+    ctx.fillStyle = palette.fill;
+    ctx.fill();
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = palette.stroke;
+    ctx.stroke();
+    ctx.fillStyle = palette.text;
+    ctx.fillText(ch.label, x + 11, y + 18);
+  });
+
+  // Summary box sized cleanly to content
+  drawRoundedRect(ctx, padX, sumBoxY, innerW, sumBoxH, 24);
+  ctx.fillStyle = 'rgba(11, 13, 20, 0.9)';
+  ctx.fill();
+  ctx.lineWidth = 1.5;
+  ctx.strokeStyle = '#23293A';
+  ctx.stroke();
+
+  ctx.fillStyle = '#FCD34D';
+  ctx.font = '800 16px "Noto Sans KR", "Inter", sans-serif';
+  ctx.fillText('📜 점괘 핵심 요약 (주의점 포함)', padX + 24, sumBoxY + 30);
+
+  let rowCursorY = sumBoxY + sumBoxHeaderH;
+  ctx.font = '500 15.5px "Noto Sans KR", "Inter", sans-serif';
+
+  summaryRows.forEach(row => {
+    drawRoundedRect(ctx, padX + 20, rowCursorY, innerW - 40, row.rowH, 14);
+    ctx.fillStyle = 'rgba(19, 23, 34, 0.85)';
+    ctx.fill();
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = 'rgba(35, 41, 58, 0.9)';
+    ctx.stroke();
+
+    ctx.fillStyle = row.isLast ? '#FDA4AF' : '#E5E7EB';
+    row.wrapped.forEach((wLine, wIdx) => {
+      ctx.fillText(wLine, padX + 36, rowCursorY + 22 + wIdx * lineHeight);
+    });
+    rowCursorY += row.rowH + rowsGap;
+  });
+
+  // Footer right below summary box
+  ctx.fillStyle = '#6B7280';
+  ctx.font = '500 13px "Noto Sans KR", "Inter", sans-serif';
+  ctx.fillText('가챠 사주운세 · 오늘의 가챠운', padX, footerY);
+
+  return canvas.toDataURL('image/png');
+}
+
+document.getElementById('download-card-btn').addEventListener('click', async () => {
+  if (!latestRenderedPayload) return;
+  try {
+    if (document.fonts && document.fonts.ready) {
+      await document.fonts.ready;
+    }
+    const dataUrl = await generateCardPngDataUrl(latestRenderedPayload);
+    const link = document.createElement('a');
+    link.download = `gacha-saju-${latestRenderedPayload.targetDayObj.date}.png`;
+    link.href = dataUrl;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    showToast('결과 카드 PNG 이미지가 저장되었습니다!');
+  } catch (err) {
+    showToast('이미지 생성에 실패했습니다. 텍스트 복사를 이용해 주세요.');
+  }
+});
+
+function switchTab(tabId) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.add('hidden'));
+  document.getElementById(tabId).classList.remove('hidden');
+
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    if (btn.dataset.tab === tabId) {
+      btn.className = 'tab-btn py-2.5 px-1.5 rounded-xl text-[11px] sm:text-sm font-bold bg-amber-500 text-gray-950 transition';
+    } else {
+      btn.className = 'tab-btn py-2.5 px-1.5 rounded-xl text-[11px] sm:text-sm font-bold text-gray-400 hover:text-white transition';
+    }
+  });
+}
+
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => switchTab(btn.dataset.tab));
+});
+
+document.getElementById('next-tab-btn').addEventListener('click', () => {
+  switchTab('tab-ritual');
+});
+
+document.getElementById('retry-btn').addEventListener('click', () => {
+  clearLoadingTimers();
+  document.getElementById('result-section').classList.add('hidden');
+  document.getElementById('input-section').classList.remove('hidden');
+});
+
+function syncIfDateChanged(notifyUser = false) {
+  const latestKey = getKstTodayKey();
+  if (latestKey === activeKstDateKey) return false;
+
+  activeKstDateKey = latestKey;
+  UPCOMING_DAYS = buildUpcomingDays(14);
+  CALENDAR_DAYS = UPCOMING_DAYS.slice(0, 7);
+  populateTargetDateOptions(targetDateSel.value);
+
+  const resultVisible = !document.getElementById('result-section').classList.contains('hidden');
+  if (resultVisible) {
+    const { computedData, isCached } = computeCurrentSajuPayload();
+    latestRenderedPayload = computedData;
+    renderResult(computedData, isCached);
+  }
+  if (notifyUser) {
+    showToast('날짜가 바뀌어 점칠 날짜와 캘린더를 갱신했습니다!');
+  }
+  return true;
+}
+
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible') {
+    syncIfDateChanged(true);
+  }
+});
+
+window.addEventListener('focus', () => {
+  syncIfDateChanged(true);
+});
+
+setInterval(() => {
+  syncIfDateChanged(true);
+}, 30000);
+
+const footerYearEl = document.getElementById('footer-year');
+if (footerYearEl) {
+  footerYearEl.textContent = String(currentKstYear || new Date().getFullYear());
+}
+
+document.getElementById('copy-share-btn').addEventListener('click', async () => {
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      await navigator.clipboard.writeText(latestShareText);
+    } else {
+      const textarea = document.createElement('textarea');
+      textarea.value = latestShareText;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+    }
+    showToast('커뮤니티 공유용 결과가 복사되었습니다!');
+  } catch (err) {
+    showToast('복사에 실패했습니다. 화면을 캡처해 공유해 주세요.');
+  }
+});
+  </script>
+</body>
+</html>
